@@ -23,7 +23,9 @@ const targetSystemName = getSystemName(INPUT_DIR, ALL_SYSTEM);
 const sourceSystemName = findSystemCategory(targetSystemName);
 const interfaceIdPre = targetSystemName ? targetSystemName.toUpperCase().replace(/-/g, '_') + '_' : 'NDRS_';
 
+//interface json data
 const interfacJsonFileName = `${targetSystemName}-data`;
+const interfaceJsonData = readFileJson(interfacJsonFileName);
 
 
 function getSystemName(text, targets){
@@ -138,21 +140,16 @@ function processJavaFiles() {
                 }
                 setSystemName(data);
     
-                let jsonData = readFileJson(interfacJsonFileName);
                 let interfaceId = '';
-                if(jsonData && jsonData.length > 0){
-                    const item = jsonData.find(item => item.url === data.url && item.method === data.method);
+                if(interfaceJsonData && interfaceJsonData.length > 0){
+                    const item = interfaceJsonData.find(item => item.url === data.url && item.method === data.method);
                     if(item && item.interfaceId && item.interfaceId != ''){
                         interfaceId = item.interfaceId;
                     }
                 }
                 
                 if( interfaceId == ''){
-                    // const result = findFileInControllers(INPUT_DIR, path.basename(file));
-                    // if (result) {
-                    //    interfaceId = interfaceIdPre + String(result.folderIndex).padStart(2, '0') + String(result.fileIndex).padStart(2, '0') + String(data.index).padStart(2, '0');
-                    // }
-                    data.interfaceId = interfaceIdPre + String(cnt).padStart(3, '0');
+                    interfaceId = interfaceIdPre + String(cnt).padStart(3, '0');
                     cnt++;
                 }
                 data.interfaceId = interfaceId;
@@ -170,8 +167,10 @@ function processJavaFilesAll() {
     const javaFiles = findJavaFilesRecursiveAll(INPUT_DIR, []);
 
     let cnt = 1;
-    javaFiles.forEach(file => {
+    console.log('Controller 총 갯수 :: ', javaFiles.length)
+    javaFiles.forEach((file, index) => {
         let apiList = parseJavaControllerApiList(file);
+        console.log('Controller ::', index, file, '(' + apiList.length + ')')
         if(apiList){
             apiList.forEach(data=>{
                 if(data.requestType){
@@ -190,6 +189,7 @@ function processJavaFilesAll() {
             resultData = resultData.concat(apiList);
         }
     });
+    console.log('API 총 갯수 :: ', cnt)
     try {
         writerFileJson(resultData, interfacJsonFileName);
     } catch (error) {}
