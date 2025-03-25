@@ -1,0 +1,5754 @@
+[
+  {
+    "index": "001",
+    "url": "/mbr/v1/icr/cfmd/dout/atmtc",
+    "method": "POST",
+    "summary": "확인서 자동 퇴회 api",
+    "description": "확인서 자동 퇴회 api",
+    "responseType": "Void",
+    "requestType": "CfmdAtmtcDoutReqDto",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "",
+    "requestData": [
+      {
+        "description": "퇴회 년월",
+        "field": "doutYm",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "자동 퇴회 여부",
+        "field": "autoDoutYn",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      }
+    ],
+    "responseData": [],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_001"
+  },
+  {
+    "index": "002",
+    "url": "/mbr/v1/sys/code/find/list",
+    "method": "POST",
+    "summary": "하위코드 다건 조회",
+    "description": "하위코드 다건 조회 API 입니다.",
+    "responseType": "CodesDto",
+    "requestType": "CodeDto",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "",
+    "requestData": [
+      {
+        "description": "그룹코드배열",
+        "field": "grpCdList",
+        "type": "List<String>",
+        "example": "그룹코드배열",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드값",
+        "field": "grpCdVal",
+        "type": "String",
+        "example": "100",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드명",
+        "field": "grpCdNm",
+        "type": "String",
+        "example": "공통",
+        "hidden": "N"
+      },
+      {
+        "description": "코드값",
+        "field": "cdVal",
+        "type": "String",
+        "example": "001",
+        "hidden": "N"
+      },
+      {
+        "description": "코드명",
+        "field": "cdNm",
+        "type": "String",
+        "example": "하위코드",
+        "hidden": "N"
+      },
+      {
+        "description": "순번",
+        "field": "ordNo",
+        "type": "int",
+        "example": "순번",
+        "hidden": "N"
+      },
+      {
+        "description": "sfId",
+        "field": "sfId",
+        "type": "String",
+        "example": "a0f1e000001T6IqAAK",
+        "hidden": "N"
+      },
+      {
+        "description": "약어",
+        "field": "cdAbbrNm",
+        "type": "String",
+        "example": "약어",
+        "hidden": "N"
+      }
+    ],
+    "responseData": [
+      {
+        "description": "데이터 행 번호",
+        "field": "rowNum",
+        "type": "int",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "데이터 전체 건수",
+        "field": "totalCnt",
+        "type": "int",
+        "example": "99",
+        "hidden": "N"
+      },
+      {
+        "description": "현재 페이지",
+        "field": "currentPage",
+        "type": "int",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "페이지에 보여질 목록 건수",
+        "field": "pageSize",
+        "type": "int",
+        "example": "10",
+        "hidden": "N"
+      },
+      {
+        "description": "전체 페이지 수",
+        "field": "pageCount",
+        "type": "int",
+        "example": "12",
+        "hidden": "N"
+      },
+      {
+        "description": "코드목록",
+        "field": "list",
+        "type": "List<CodeDto>",
+        "example": "코드목록",
+        "hidden": "N",
+        "listData": [
+          {
+            "description": "그룹코드배열",
+            "field": "grpCdList",
+            "type": "List<String>",
+            "example": "그룹코드배열",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드값",
+            "field": "grpCdVal",
+            "type": "String",
+            "example": "100",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드명",
+            "field": "grpCdNm",
+            "type": "String",
+            "example": "공통",
+            "hidden": "N"
+          },
+          {
+            "description": "코드값",
+            "field": "cdVal",
+            "type": "String",
+            "example": "001",
+            "hidden": "N"
+          },
+          {
+            "description": "코드명",
+            "field": "cdNm",
+            "type": "String",
+            "example": "하위코드",
+            "hidden": "N"
+          },
+          {
+            "description": "순번",
+            "field": "ordNo",
+            "type": "int",
+            "example": "순번",
+            "hidden": "N"
+          },
+          {
+            "description": "sfId",
+            "field": "sfId",
+            "type": "String",
+            "example": "a0f1e000001T6IqAAK",
+            "hidden": "N"
+          },
+          {
+            "description": "약어",
+            "field": "cdAbbrNm",
+            "type": "String",
+            "example": "약어",
+            "hidden": "N"
+          }
+        ]
+      }
+    ],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_002"
+  },
+  {
+    "index": "003",
+    "url": "/mbr/v2/sys/code/find/list",
+    "method": "POST",
+    "summary": "하위코드 다건 조회",
+    "description": "하위코드 다건 조회 API 입니다.",
+    "responseType": "CodesDto",
+    "requestType": "CodeDto",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "",
+    "requestData": [
+      {
+        "description": "그룹코드배열",
+        "field": "grpCdList",
+        "type": "List<String>",
+        "example": "그룹코드배열",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드값",
+        "field": "grpCdVal",
+        "type": "String",
+        "example": "100",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드명",
+        "field": "grpCdNm",
+        "type": "String",
+        "example": "공통",
+        "hidden": "N"
+      },
+      {
+        "description": "코드값",
+        "field": "cdVal",
+        "type": "String",
+        "example": "001",
+        "hidden": "N"
+      },
+      {
+        "description": "코드명",
+        "field": "cdNm",
+        "type": "String",
+        "example": "하위코드",
+        "hidden": "N"
+      },
+      {
+        "description": "순번",
+        "field": "ordNo",
+        "type": "int",
+        "example": "순번",
+        "hidden": "N"
+      },
+      {
+        "description": "sfId",
+        "field": "sfId",
+        "type": "String",
+        "example": "a0f1e000001T6IqAAK",
+        "hidden": "N"
+      },
+      {
+        "description": "약어",
+        "field": "cdAbbrNm",
+        "type": "String",
+        "example": "약어",
+        "hidden": "N"
+      }
+    ],
+    "responseData": [
+      {
+        "description": "데이터 행 번호",
+        "field": "rowNum",
+        "type": "int",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "데이터 전체 건수",
+        "field": "totalCnt",
+        "type": "int",
+        "example": "99",
+        "hidden": "N"
+      },
+      {
+        "description": "현재 페이지",
+        "field": "currentPage",
+        "type": "int",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "페이지에 보여질 목록 건수",
+        "field": "pageSize",
+        "type": "int",
+        "example": "10",
+        "hidden": "N"
+      },
+      {
+        "description": "전체 페이지 수",
+        "field": "pageCount",
+        "type": "int",
+        "example": "12",
+        "hidden": "N"
+      },
+      {
+        "description": "코드목록",
+        "field": "list",
+        "type": "List<CodeDto>",
+        "example": "코드목록",
+        "hidden": "N",
+        "listData": [
+          {
+            "description": "그룹코드배열",
+            "field": "grpCdList",
+            "type": "List<String>",
+            "example": "그룹코드배열",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드값",
+            "field": "grpCdVal",
+            "type": "String",
+            "example": "100",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드명",
+            "field": "grpCdNm",
+            "type": "String",
+            "example": "공통",
+            "hidden": "N"
+          },
+          {
+            "description": "코드값",
+            "field": "cdVal",
+            "type": "String",
+            "example": "001",
+            "hidden": "N"
+          },
+          {
+            "description": "코드명",
+            "field": "cdNm",
+            "type": "String",
+            "example": "하위코드",
+            "hidden": "N"
+          },
+          {
+            "description": "순번",
+            "field": "ordNo",
+            "type": "int",
+            "example": "순번",
+            "hidden": "N"
+          },
+          {
+            "description": "sfId",
+            "field": "sfId",
+            "type": "String",
+            "example": "a0f1e000001T6IqAAK",
+            "hidden": "N"
+          },
+          {
+            "description": "약어",
+            "field": "cdAbbrNm",
+            "type": "String",
+            "example": "약어",
+            "hidden": "N"
+          }
+        ]
+      }
+    ],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_003"
+  },
+  {
+    "index": "004",
+    "url": "/mbr/v1/sys/code/find/list/SF100",
+    "method": "POST",
+    "summary": "하위코드 다건 조회",
+    "description": "하위코드 다건 조회 API 입니다.",
+    "responseType": "CodesDto",
+    "requestType": "CodeDto",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "",
+    "requestData": [
+      {
+        "description": "그룹코드배열",
+        "field": "grpCdList",
+        "type": "List<String>",
+        "example": "그룹코드배열",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드값",
+        "field": "grpCdVal",
+        "type": "String",
+        "example": "100",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드명",
+        "field": "grpCdNm",
+        "type": "String",
+        "example": "공통",
+        "hidden": "N"
+      },
+      {
+        "description": "코드값",
+        "field": "cdVal",
+        "type": "String",
+        "example": "001",
+        "hidden": "N"
+      },
+      {
+        "description": "코드명",
+        "field": "cdNm",
+        "type": "String",
+        "example": "하위코드",
+        "hidden": "N"
+      },
+      {
+        "description": "순번",
+        "field": "ordNo",
+        "type": "int",
+        "example": "순번",
+        "hidden": "N"
+      },
+      {
+        "description": "sfId",
+        "field": "sfId",
+        "type": "String",
+        "example": "a0f1e000001T6IqAAK",
+        "hidden": "N"
+      },
+      {
+        "description": "약어",
+        "field": "cdAbbrNm",
+        "type": "String",
+        "example": "약어",
+        "hidden": "N"
+      }
+    ],
+    "responseData": [
+      {
+        "description": "데이터 행 번호",
+        "field": "rowNum",
+        "type": "int",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "데이터 전체 건수",
+        "field": "totalCnt",
+        "type": "int",
+        "example": "99",
+        "hidden": "N"
+      },
+      {
+        "description": "현재 페이지",
+        "field": "currentPage",
+        "type": "int",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "페이지에 보여질 목록 건수",
+        "field": "pageSize",
+        "type": "int",
+        "example": "10",
+        "hidden": "N"
+      },
+      {
+        "description": "전체 페이지 수",
+        "field": "pageCount",
+        "type": "int",
+        "example": "12",
+        "hidden": "N"
+      },
+      {
+        "description": "코드목록",
+        "field": "list",
+        "type": "List<CodeDto>",
+        "example": "코드목록",
+        "hidden": "N",
+        "listData": [
+          {
+            "description": "그룹코드배열",
+            "field": "grpCdList",
+            "type": "List<String>",
+            "example": "그룹코드배열",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드값",
+            "field": "grpCdVal",
+            "type": "String",
+            "example": "100",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드명",
+            "field": "grpCdNm",
+            "type": "String",
+            "example": "공통",
+            "hidden": "N"
+          },
+          {
+            "description": "코드값",
+            "field": "cdVal",
+            "type": "String",
+            "example": "001",
+            "hidden": "N"
+          },
+          {
+            "description": "코드명",
+            "field": "cdNm",
+            "type": "String",
+            "example": "하위코드",
+            "hidden": "N"
+          },
+          {
+            "description": "순번",
+            "field": "ordNo",
+            "type": "int",
+            "example": "순번",
+            "hidden": "N"
+          },
+          {
+            "description": "sfId",
+            "field": "sfId",
+            "type": "String",
+            "example": "a0f1e000001T6IqAAK",
+            "hidden": "N"
+          },
+          {
+            "description": "약어",
+            "field": "cdAbbrNm",
+            "type": "String",
+            "example": "약어",
+            "hidden": "N"
+          }
+        ]
+      }
+    ],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_004"
+  },
+  {
+    "index": "005",
+    "url": "/mbr/v1/sys/code/find/group/list",
+    "method": "POST",
+    "summary": "하위코드 그룹별 조회",
+    "description": "하위코드 그룹별 조회 API 입니다.",
+    "responseType": "List<CodesDto>",
+    "requestType": "CodeDto",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "",
+    "requestData": [
+      {
+        "description": "그룹코드배열",
+        "field": "grpCdList",
+        "type": "List<String>",
+        "example": "그룹코드배열",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드값",
+        "field": "grpCdVal",
+        "type": "String",
+        "example": "100",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드명",
+        "field": "grpCdNm",
+        "type": "String",
+        "example": "공통",
+        "hidden": "N"
+      },
+      {
+        "description": "코드값",
+        "field": "cdVal",
+        "type": "String",
+        "example": "001",
+        "hidden": "N"
+      },
+      {
+        "description": "코드명",
+        "field": "cdNm",
+        "type": "String",
+        "example": "하위코드",
+        "hidden": "N"
+      },
+      {
+        "description": "순번",
+        "field": "ordNo",
+        "type": "int",
+        "example": "순번",
+        "hidden": "N"
+      },
+      {
+        "description": "sfId",
+        "field": "sfId",
+        "type": "String",
+        "example": "a0f1e000001T6IqAAK",
+        "hidden": "N"
+      },
+      {
+        "description": "약어",
+        "field": "cdAbbrNm",
+        "type": "String",
+        "example": "약어",
+        "hidden": "N"
+      }
+    ],
+    "responseData": [
+      {
+        "description": "데이터 행 번호",
+        "field": "rowNum",
+        "type": "int",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "데이터 전체 건수",
+        "field": "totalCnt",
+        "type": "int",
+        "example": "99",
+        "hidden": "N"
+      },
+      {
+        "description": "현재 페이지",
+        "field": "currentPage",
+        "type": "int",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "페이지에 보여질 목록 건수",
+        "field": "pageSize",
+        "type": "int",
+        "example": "10",
+        "hidden": "N"
+      },
+      {
+        "description": "전체 페이지 수",
+        "field": "pageCount",
+        "type": "int",
+        "example": "12",
+        "hidden": "N"
+      },
+      {
+        "description": "코드목록",
+        "field": "list",
+        "type": "List<CodeDto>",
+        "example": "코드목록",
+        "hidden": "N",
+        "listData": [
+          {
+            "description": "그룹코드배열",
+            "field": "grpCdList",
+            "type": "List<String>",
+            "example": "그룹코드배열",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드값",
+            "field": "grpCdVal",
+            "type": "String",
+            "example": "100",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드명",
+            "field": "grpCdNm",
+            "type": "String",
+            "example": "공통",
+            "hidden": "N"
+          },
+          {
+            "description": "코드값",
+            "field": "cdVal",
+            "type": "String",
+            "example": "001",
+            "hidden": "N"
+          },
+          {
+            "description": "코드명",
+            "field": "cdNm",
+            "type": "String",
+            "example": "하위코드",
+            "hidden": "N"
+          },
+          {
+            "description": "순번",
+            "field": "ordNo",
+            "type": "int",
+            "example": "순번",
+            "hidden": "N"
+          },
+          {
+            "description": "sfId",
+            "field": "sfId",
+            "type": "String",
+            "example": "a0f1e000001T6IqAAK",
+            "hidden": "N"
+          },
+          {
+            "description": "약어",
+            "field": "cdAbbrNm",
+            "type": "String",
+            "example": "약어",
+            "hidden": "N"
+          }
+        ]
+      }
+    ],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_005"
+  },
+  {
+    "index": "006",
+    "url": "/mbr/v1/sys/code/find/page/list",
+    "method": "POST",
+    "summary": "하위코드 다건 페이지 조회",
+    "description": "하위코드 다건 페이지 조회 API 입니다.",
+    "responseType": "CodesDto",
+    "requestType": "CodeDto",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "",
+    "requestData": [
+      {
+        "description": "그룹코드배열",
+        "field": "grpCdList",
+        "type": "List<String>",
+        "example": "그룹코드배열",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드값",
+        "field": "grpCdVal",
+        "type": "String",
+        "example": "100",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드명",
+        "field": "grpCdNm",
+        "type": "String",
+        "example": "공통",
+        "hidden": "N"
+      },
+      {
+        "description": "코드값",
+        "field": "cdVal",
+        "type": "String",
+        "example": "001",
+        "hidden": "N"
+      },
+      {
+        "description": "코드명",
+        "field": "cdNm",
+        "type": "String",
+        "example": "하위코드",
+        "hidden": "N"
+      },
+      {
+        "description": "순번",
+        "field": "ordNo",
+        "type": "int",
+        "example": "순번",
+        "hidden": "N"
+      },
+      {
+        "description": "sfId",
+        "field": "sfId",
+        "type": "String",
+        "example": "a0f1e000001T6IqAAK",
+        "hidden": "N"
+      },
+      {
+        "description": "약어",
+        "field": "cdAbbrNm",
+        "type": "String",
+        "example": "약어",
+        "hidden": "N"
+      }
+    ],
+    "responseData": [
+      {
+        "description": "데이터 행 번호",
+        "field": "rowNum",
+        "type": "int",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "데이터 전체 건수",
+        "field": "totalCnt",
+        "type": "int",
+        "example": "99",
+        "hidden": "N"
+      },
+      {
+        "description": "현재 페이지",
+        "field": "currentPage",
+        "type": "int",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "페이지에 보여질 목록 건수",
+        "field": "pageSize",
+        "type": "int",
+        "example": "10",
+        "hidden": "N"
+      },
+      {
+        "description": "전체 페이지 수",
+        "field": "pageCount",
+        "type": "int",
+        "example": "12",
+        "hidden": "N"
+      },
+      {
+        "description": "코드목록",
+        "field": "list",
+        "type": "List<CodeDto>",
+        "example": "코드목록",
+        "hidden": "N",
+        "listData": [
+          {
+            "description": "그룹코드배열",
+            "field": "grpCdList",
+            "type": "List<String>",
+            "example": "그룹코드배열",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드값",
+            "field": "grpCdVal",
+            "type": "String",
+            "example": "100",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드명",
+            "field": "grpCdNm",
+            "type": "String",
+            "example": "공통",
+            "hidden": "N"
+          },
+          {
+            "description": "코드값",
+            "field": "cdVal",
+            "type": "String",
+            "example": "001",
+            "hidden": "N"
+          },
+          {
+            "description": "코드명",
+            "field": "cdNm",
+            "type": "String",
+            "example": "하위코드",
+            "hidden": "N"
+          },
+          {
+            "description": "순번",
+            "field": "ordNo",
+            "type": "int",
+            "example": "순번",
+            "hidden": "N"
+          },
+          {
+            "description": "sfId",
+            "field": "sfId",
+            "type": "String",
+            "example": "a0f1e000001T6IqAAK",
+            "hidden": "N"
+          },
+          {
+            "description": "약어",
+            "field": "cdAbbrNm",
+            "type": "String",
+            "example": "약어",
+            "hidden": "N"
+          }
+        ]
+      }
+    ],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_006"
+  },
+  {
+    "index": "007",
+    "url": "/mbr/v1/sys/code/find",
+    "method": "POST",
+    "summary": "하위코드 조회",
+    "description": "하위코드 조회 API 입니다.",
+    "responseType": "CodeDto",
+    "requestType": "CodeDto",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "",
+    "requestData": [
+      {
+        "description": "그룹코드배열",
+        "field": "grpCdList",
+        "type": "List<String>",
+        "example": "그룹코드배열",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드값",
+        "field": "grpCdVal",
+        "type": "String",
+        "example": "100",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드명",
+        "field": "grpCdNm",
+        "type": "String",
+        "example": "공통",
+        "hidden": "N"
+      },
+      {
+        "description": "코드값",
+        "field": "cdVal",
+        "type": "String",
+        "example": "001",
+        "hidden": "N"
+      },
+      {
+        "description": "코드명",
+        "field": "cdNm",
+        "type": "String",
+        "example": "하위코드",
+        "hidden": "N"
+      },
+      {
+        "description": "순번",
+        "field": "ordNo",
+        "type": "int",
+        "example": "순번",
+        "hidden": "N"
+      },
+      {
+        "description": "sfId",
+        "field": "sfId",
+        "type": "String",
+        "example": "a0f1e000001T6IqAAK",
+        "hidden": "N"
+      },
+      {
+        "description": "약어",
+        "field": "cdAbbrNm",
+        "type": "String",
+        "example": "약어",
+        "hidden": "N"
+      }
+    ],
+    "responseData": [
+      {
+        "description": "그룹코드배열",
+        "field": "grpCdList",
+        "type": "List<String>",
+        "example": "그룹코드배열",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드값",
+        "field": "grpCdVal",
+        "type": "String",
+        "example": "100",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드명",
+        "field": "grpCdNm",
+        "type": "String",
+        "example": "공통",
+        "hidden": "N"
+      },
+      {
+        "description": "코드값",
+        "field": "cdVal",
+        "type": "String",
+        "example": "001",
+        "hidden": "N"
+      },
+      {
+        "description": "코드명",
+        "field": "cdNm",
+        "type": "String",
+        "example": "하위코드",
+        "hidden": "N"
+      },
+      {
+        "description": "순번",
+        "field": "ordNo",
+        "type": "int",
+        "example": "순번",
+        "hidden": "N"
+      },
+      {
+        "description": "sfId",
+        "field": "sfId",
+        "type": "String",
+        "example": "a0f1e000001T6IqAAK",
+        "hidden": "N"
+      },
+      {
+        "description": "약어",
+        "field": "cdAbbrNm",
+        "type": "String",
+        "example": "약어",
+        "hidden": "N"
+      }
+    ],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_007"
+  },
+  {
+    "index": "008",
+    "url": "/mbr/v1/sys/code/save",
+    "method": "POST",
+    "summary": "하위코드정보 일괄 처리",
+    "description": "하위코드정보 일괄 처리 API 입니다. (등록,수정,삭제)",
+    "responseType": "CodeBatchDto",
+    "requestType": "CodeBatchDto",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "",
+    "requestData": [
+      {
+        "description": "등록요청 코드정보",
+        "field": "insertData",
+        "type": "List<CodeDto>",
+        "example": "",
+        "hidden": "N",
+        "listData": [
+          {
+            "description": "그룹코드배열",
+            "field": "grpCdList",
+            "type": "List<String>",
+            "example": "그룹코드배열",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드값",
+            "field": "grpCdVal",
+            "type": "String",
+            "example": "100",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드명",
+            "field": "grpCdNm",
+            "type": "String",
+            "example": "공통",
+            "hidden": "N"
+          },
+          {
+            "description": "코드값",
+            "field": "cdVal",
+            "type": "String",
+            "example": "001",
+            "hidden": "N"
+          },
+          {
+            "description": "코드명",
+            "field": "cdNm",
+            "type": "String",
+            "example": "하위코드",
+            "hidden": "N"
+          },
+          {
+            "description": "순번",
+            "field": "ordNo",
+            "type": "int",
+            "example": "순번",
+            "hidden": "N"
+          },
+          {
+            "description": "sfId",
+            "field": "sfId",
+            "type": "String",
+            "example": "a0f1e000001T6IqAAK",
+            "hidden": "N"
+          },
+          {
+            "description": "약어",
+            "field": "cdAbbrNm",
+            "type": "String",
+            "example": "약어",
+            "hidden": "N"
+          }
+        ]
+      },
+      {
+        "description": "수정요청 코드정보",
+        "field": "updateData",
+        "type": "List<CodeDto>",
+        "example": "",
+        "hidden": "N",
+        "listData": [
+          {
+            "description": "그룹코드배열",
+            "field": "grpCdList",
+            "type": "List<String>",
+            "example": "그룹코드배열",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드값",
+            "field": "grpCdVal",
+            "type": "String",
+            "example": "100",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드명",
+            "field": "grpCdNm",
+            "type": "String",
+            "example": "공통",
+            "hidden": "N"
+          },
+          {
+            "description": "코드값",
+            "field": "cdVal",
+            "type": "String",
+            "example": "001",
+            "hidden": "N"
+          },
+          {
+            "description": "코드명",
+            "field": "cdNm",
+            "type": "String",
+            "example": "하위코드",
+            "hidden": "N"
+          },
+          {
+            "description": "순번",
+            "field": "ordNo",
+            "type": "int",
+            "example": "순번",
+            "hidden": "N"
+          },
+          {
+            "description": "sfId",
+            "field": "sfId",
+            "type": "String",
+            "example": "a0f1e000001T6IqAAK",
+            "hidden": "N"
+          },
+          {
+            "description": "약어",
+            "field": "cdAbbrNm",
+            "type": "String",
+            "example": "약어",
+            "hidden": "N"
+          }
+        ]
+      },
+      {
+        "description": "삭제요청 코드정보",
+        "field": "deleteData",
+        "type": "List<CodeDto>",
+        "example": "",
+        "hidden": "N",
+        "listData": [
+          {
+            "description": "그룹코드배열",
+            "field": "grpCdList",
+            "type": "List<String>",
+            "example": "그룹코드배열",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드값",
+            "field": "grpCdVal",
+            "type": "String",
+            "example": "100",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드명",
+            "field": "grpCdNm",
+            "type": "String",
+            "example": "공통",
+            "hidden": "N"
+          },
+          {
+            "description": "코드값",
+            "field": "cdVal",
+            "type": "String",
+            "example": "001",
+            "hidden": "N"
+          },
+          {
+            "description": "코드명",
+            "field": "cdNm",
+            "type": "String",
+            "example": "하위코드",
+            "hidden": "N"
+          },
+          {
+            "description": "순번",
+            "field": "ordNo",
+            "type": "int",
+            "example": "순번",
+            "hidden": "N"
+          },
+          {
+            "description": "sfId",
+            "field": "sfId",
+            "type": "String",
+            "example": "a0f1e000001T6IqAAK",
+            "hidden": "N"
+          },
+          {
+            "description": "약어",
+            "field": "cdAbbrNm",
+            "type": "String",
+            "example": "약어",
+            "hidden": "N"
+          }
+        ]
+      },
+      {
+        "description": "일괄등록 성공건수",
+        "field": "insertSuccessCnt",
+        "type": "int",
+        "example": "7",
+        "hidden": "N"
+      },
+      {
+        "description": "일괄수정 성공건수",
+        "field": "updateSuccessCnt",
+        "type": "int",
+        "example": "7",
+        "hidden": "N"
+      },
+      {
+        "description": "일괄삭제 성공 건수",
+        "field": "deleteSuccessCnt",
+        "type": "int",
+        "example": "7",
+        "hidden": "N"
+      },
+      {
+        "description": "일괄등록 실패결과정보",
+        "field": "insertFailData",
+        "type": "List<CodeDto>",
+        "example": "",
+        "hidden": "N",
+        "listData": [
+          {
+            "description": "그룹코드배열",
+            "field": "grpCdList",
+            "type": "List<String>",
+            "example": "그룹코드배열",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드값",
+            "field": "grpCdVal",
+            "type": "String",
+            "example": "100",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드명",
+            "field": "grpCdNm",
+            "type": "String",
+            "example": "공통",
+            "hidden": "N"
+          },
+          {
+            "description": "코드값",
+            "field": "cdVal",
+            "type": "String",
+            "example": "001",
+            "hidden": "N"
+          },
+          {
+            "description": "코드명",
+            "field": "cdNm",
+            "type": "String",
+            "example": "하위코드",
+            "hidden": "N"
+          },
+          {
+            "description": "순번",
+            "field": "ordNo",
+            "type": "int",
+            "example": "순번",
+            "hidden": "N"
+          },
+          {
+            "description": "sfId",
+            "field": "sfId",
+            "type": "String",
+            "example": "a0f1e000001T6IqAAK",
+            "hidden": "N"
+          },
+          {
+            "description": "약어",
+            "field": "cdAbbrNm",
+            "type": "String",
+            "example": "약어",
+            "hidden": "N"
+          }
+        ]
+      },
+      {
+        "description": "일괄수정 실패결과정보",
+        "field": "updateFailData",
+        "type": "List<CodeDto>",
+        "example": "",
+        "hidden": "N",
+        "listData": [
+          {
+            "description": "그룹코드배열",
+            "field": "grpCdList",
+            "type": "List<String>",
+            "example": "그룹코드배열",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드값",
+            "field": "grpCdVal",
+            "type": "String",
+            "example": "100",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드명",
+            "field": "grpCdNm",
+            "type": "String",
+            "example": "공통",
+            "hidden": "N"
+          },
+          {
+            "description": "코드값",
+            "field": "cdVal",
+            "type": "String",
+            "example": "001",
+            "hidden": "N"
+          },
+          {
+            "description": "코드명",
+            "field": "cdNm",
+            "type": "String",
+            "example": "하위코드",
+            "hidden": "N"
+          },
+          {
+            "description": "순번",
+            "field": "ordNo",
+            "type": "int",
+            "example": "순번",
+            "hidden": "N"
+          },
+          {
+            "description": "sfId",
+            "field": "sfId",
+            "type": "String",
+            "example": "a0f1e000001T6IqAAK",
+            "hidden": "N"
+          },
+          {
+            "description": "약어",
+            "field": "cdAbbrNm",
+            "type": "String",
+            "example": "약어",
+            "hidden": "N"
+          }
+        ]
+      },
+      {
+        "description": "일괄삭제 실패결과정보",
+        "field": "deleteFailData",
+        "type": "List<CodeDto>",
+        "example": "",
+        "hidden": "N",
+        "listData": [
+          {
+            "description": "그룹코드배열",
+            "field": "grpCdList",
+            "type": "List<String>",
+            "example": "그룹코드배열",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드값",
+            "field": "grpCdVal",
+            "type": "String",
+            "example": "100",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드명",
+            "field": "grpCdNm",
+            "type": "String",
+            "example": "공통",
+            "hidden": "N"
+          },
+          {
+            "description": "코드값",
+            "field": "cdVal",
+            "type": "String",
+            "example": "001",
+            "hidden": "N"
+          },
+          {
+            "description": "코드명",
+            "field": "cdNm",
+            "type": "String",
+            "example": "하위코드",
+            "hidden": "N"
+          },
+          {
+            "description": "순번",
+            "field": "ordNo",
+            "type": "int",
+            "example": "순번",
+            "hidden": "N"
+          },
+          {
+            "description": "sfId",
+            "field": "sfId",
+            "type": "String",
+            "example": "a0f1e000001T6IqAAK",
+            "hidden": "N"
+          },
+          {
+            "description": "약어",
+            "field": "cdAbbrNm",
+            "type": "String",
+            "example": "약어",
+            "hidden": "N"
+          }
+        ]
+      }
+    ],
+    "responseData": [
+      {
+        "description": "등록요청 코드정보",
+        "field": "insertData",
+        "type": "List<CodeDto>",
+        "example": "",
+        "hidden": "N",
+        "listData": [
+          {
+            "description": "그룹코드배열",
+            "field": "grpCdList",
+            "type": "List<String>",
+            "example": "그룹코드배열",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드값",
+            "field": "grpCdVal",
+            "type": "String",
+            "example": "100",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드명",
+            "field": "grpCdNm",
+            "type": "String",
+            "example": "공통",
+            "hidden": "N"
+          },
+          {
+            "description": "코드값",
+            "field": "cdVal",
+            "type": "String",
+            "example": "001",
+            "hidden": "N"
+          },
+          {
+            "description": "코드명",
+            "field": "cdNm",
+            "type": "String",
+            "example": "하위코드",
+            "hidden": "N"
+          },
+          {
+            "description": "순번",
+            "field": "ordNo",
+            "type": "int",
+            "example": "순번",
+            "hidden": "N"
+          },
+          {
+            "description": "sfId",
+            "field": "sfId",
+            "type": "String",
+            "example": "a0f1e000001T6IqAAK",
+            "hidden": "N"
+          },
+          {
+            "description": "약어",
+            "field": "cdAbbrNm",
+            "type": "String",
+            "example": "약어",
+            "hidden": "N"
+          }
+        ]
+      },
+      {
+        "description": "수정요청 코드정보",
+        "field": "updateData",
+        "type": "List<CodeDto>",
+        "example": "",
+        "hidden": "N",
+        "listData": [
+          {
+            "description": "그룹코드배열",
+            "field": "grpCdList",
+            "type": "List<String>",
+            "example": "그룹코드배열",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드값",
+            "field": "grpCdVal",
+            "type": "String",
+            "example": "100",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드명",
+            "field": "grpCdNm",
+            "type": "String",
+            "example": "공통",
+            "hidden": "N"
+          },
+          {
+            "description": "코드값",
+            "field": "cdVal",
+            "type": "String",
+            "example": "001",
+            "hidden": "N"
+          },
+          {
+            "description": "코드명",
+            "field": "cdNm",
+            "type": "String",
+            "example": "하위코드",
+            "hidden": "N"
+          },
+          {
+            "description": "순번",
+            "field": "ordNo",
+            "type": "int",
+            "example": "순번",
+            "hidden": "N"
+          },
+          {
+            "description": "sfId",
+            "field": "sfId",
+            "type": "String",
+            "example": "a0f1e000001T6IqAAK",
+            "hidden": "N"
+          },
+          {
+            "description": "약어",
+            "field": "cdAbbrNm",
+            "type": "String",
+            "example": "약어",
+            "hidden": "N"
+          }
+        ]
+      },
+      {
+        "description": "삭제요청 코드정보",
+        "field": "deleteData",
+        "type": "List<CodeDto>",
+        "example": "",
+        "hidden": "N",
+        "listData": [
+          {
+            "description": "그룹코드배열",
+            "field": "grpCdList",
+            "type": "List<String>",
+            "example": "그룹코드배열",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드값",
+            "field": "grpCdVal",
+            "type": "String",
+            "example": "100",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드명",
+            "field": "grpCdNm",
+            "type": "String",
+            "example": "공통",
+            "hidden": "N"
+          },
+          {
+            "description": "코드값",
+            "field": "cdVal",
+            "type": "String",
+            "example": "001",
+            "hidden": "N"
+          },
+          {
+            "description": "코드명",
+            "field": "cdNm",
+            "type": "String",
+            "example": "하위코드",
+            "hidden": "N"
+          },
+          {
+            "description": "순번",
+            "field": "ordNo",
+            "type": "int",
+            "example": "순번",
+            "hidden": "N"
+          },
+          {
+            "description": "sfId",
+            "field": "sfId",
+            "type": "String",
+            "example": "a0f1e000001T6IqAAK",
+            "hidden": "N"
+          },
+          {
+            "description": "약어",
+            "field": "cdAbbrNm",
+            "type": "String",
+            "example": "약어",
+            "hidden": "N"
+          }
+        ]
+      },
+      {
+        "description": "일괄등록 성공건수",
+        "field": "insertSuccessCnt",
+        "type": "int",
+        "example": "7",
+        "hidden": "N"
+      },
+      {
+        "description": "일괄수정 성공건수",
+        "field": "updateSuccessCnt",
+        "type": "int",
+        "example": "7",
+        "hidden": "N"
+      },
+      {
+        "description": "일괄삭제 성공 건수",
+        "field": "deleteSuccessCnt",
+        "type": "int",
+        "example": "7",
+        "hidden": "N"
+      },
+      {
+        "description": "일괄등록 실패결과정보",
+        "field": "insertFailData",
+        "type": "List<CodeDto>",
+        "example": "",
+        "hidden": "N",
+        "listData": [
+          {
+            "description": "그룹코드배열",
+            "field": "grpCdList",
+            "type": "List<String>",
+            "example": "그룹코드배열",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드값",
+            "field": "grpCdVal",
+            "type": "String",
+            "example": "100",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드명",
+            "field": "grpCdNm",
+            "type": "String",
+            "example": "공통",
+            "hidden": "N"
+          },
+          {
+            "description": "코드값",
+            "field": "cdVal",
+            "type": "String",
+            "example": "001",
+            "hidden": "N"
+          },
+          {
+            "description": "코드명",
+            "field": "cdNm",
+            "type": "String",
+            "example": "하위코드",
+            "hidden": "N"
+          },
+          {
+            "description": "순번",
+            "field": "ordNo",
+            "type": "int",
+            "example": "순번",
+            "hidden": "N"
+          },
+          {
+            "description": "sfId",
+            "field": "sfId",
+            "type": "String",
+            "example": "a0f1e000001T6IqAAK",
+            "hidden": "N"
+          },
+          {
+            "description": "약어",
+            "field": "cdAbbrNm",
+            "type": "String",
+            "example": "약어",
+            "hidden": "N"
+          }
+        ]
+      },
+      {
+        "description": "일괄수정 실패결과정보",
+        "field": "updateFailData",
+        "type": "List<CodeDto>",
+        "example": "",
+        "hidden": "N",
+        "listData": [
+          {
+            "description": "그룹코드배열",
+            "field": "grpCdList",
+            "type": "List<String>",
+            "example": "그룹코드배열",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드값",
+            "field": "grpCdVal",
+            "type": "String",
+            "example": "100",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드명",
+            "field": "grpCdNm",
+            "type": "String",
+            "example": "공통",
+            "hidden": "N"
+          },
+          {
+            "description": "코드값",
+            "field": "cdVal",
+            "type": "String",
+            "example": "001",
+            "hidden": "N"
+          },
+          {
+            "description": "코드명",
+            "field": "cdNm",
+            "type": "String",
+            "example": "하위코드",
+            "hidden": "N"
+          },
+          {
+            "description": "순번",
+            "field": "ordNo",
+            "type": "int",
+            "example": "순번",
+            "hidden": "N"
+          },
+          {
+            "description": "sfId",
+            "field": "sfId",
+            "type": "String",
+            "example": "a0f1e000001T6IqAAK",
+            "hidden": "N"
+          },
+          {
+            "description": "약어",
+            "field": "cdAbbrNm",
+            "type": "String",
+            "example": "약어",
+            "hidden": "N"
+          }
+        ]
+      },
+      {
+        "description": "일괄삭제 실패결과정보",
+        "field": "deleteFailData",
+        "type": "List<CodeDto>",
+        "example": "",
+        "hidden": "N",
+        "listData": [
+          {
+            "description": "그룹코드배열",
+            "field": "grpCdList",
+            "type": "List<String>",
+            "example": "그룹코드배열",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드값",
+            "field": "grpCdVal",
+            "type": "String",
+            "example": "100",
+            "hidden": "N"
+          },
+          {
+            "description": "그룹코드명",
+            "field": "grpCdNm",
+            "type": "String",
+            "example": "공통",
+            "hidden": "N"
+          },
+          {
+            "description": "코드값",
+            "field": "cdVal",
+            "type": "String",
+            "example": "001",
+            "hidden": "N"
+          },
+          {
+            "description": "코드명",
+            "field": "cdNm",
+            "type": "String",
+            "example": "하위코드",
+            "hidden": "N"
+          },
+          {
+            "description": "순번",
+            "field": "ordNo",
+            "type": "int",
+            "example": "순번",
+            "hidden": "N"
+          },
+          {
+            "description": "sfId",
+            "field": "sfId",
+            "type": "String",
+            "example": "a0f1e000001T6IqAAK",
+            "hidden": "N"
+          },
+          {
+            "description": "약어",
+            "field": "cdAbbrNm",
+            "type": "String",
+            "example": "약어",
+            "hidden": "N"
+          }
+        ]
+      }
+    ],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_008"
+  },
+  {
+    "index": "009",
+    "url": "/mbr/v1/sys/code/insert",
+    "method": "POST",
+    "summary": "하위코드 생성",
+    "description": "하위코드 생성 API 입니다.",
+    "responseType": "CodeDto",
+    "requestType": "CodeDto",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "",
+    "requestData": [
+      {
+        "description": "그룹코드배열",
+        "field": "grpCdList",
+        "type": "List<String>",
+        "example": "그룹코드배열",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드값",
+        "field": "grpCdVal",
+        "type": "String",
+        "example": "100",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드명",
+        "field": "grpCdNm",
+        "type": "String",
+        "example": "공통",
+        "hidden": "N"
+      },
+      {
+        "description": "코드값",
+        "field": "cdVal",
+        "type": "String",
+        "example": "001",
+        "hidden": "N"
+      },
+      {
+        "description": "코드명",
+        "field": "cdNm",
+        "type": "String",
+        "example": "하위코드",
+        "hidden": "N"
+      },
+      {
+        "description": "순번",
+        "field": "ordNo",
+        "type": "int",
+        "example": "순번",
+        "hidden": "N"
+      },
+      {
+        "description": "sfId",
+        "field": "sfId",
+        "type": "String",
+        "example": "a0f1e000001T6IqAAK",
+        "hidden": "N"
+      },
+      {
+        "description": "약어",
+        "field": "cdAbbrNm",
+        "type": "String",
+        "example": "약어",
+        "hidden": "N"
+      }
+    ],
+    "responseData": [
+      {
+        "description": "그룹코드배열",
+        "field": "grpCdList",
+        "type": "List<String>",
+        "example": "그룹코드배열",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드값",
+        "field": "grpCdVal",
+        "type": "String",
+        "example": "100",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드명",
+        "field": "grpCdNm",
+        "type": "String",
+        "example": "공통",
+        "hidden": "N"
+      },
+      {
+        "description": "코드값",
+        "field": "cdVal",
+        "type": "String",
+        "example": "001",
+        "hidden": "N"
+      },
+      {
+        "description": "코드명",
+        "field": "cdNm",
+        "type": "String",
+        "example": "하위코드",
+        "hidden": "N"
+      },
+      {
+        "description": "순번",
+        "field": "ordNo",
+        "type": "int",
+        "example": "순번",
+        "hidden": "N"
+      },
+      {
+        "description": "sfId",
+        "field": "sfId",
+        "type": "String",
+        "example": "a0f1e000001T6IqAAK",
+        "hidden": "N"
+      },
+      {
+        "description": "약어",
+        "field": "cdAbbrNm",
+        "type": "String",
+        "example": "약어",
+        "hidden": "N"
+      }
+    ],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_009"
+  },
+  {
+    "index": "010",
+    "url": "/mbr/v1/sys/code/insert/list",
+    "method": "POST",
+    "summary": "하위코드 다건 생성",
+    "description": "하위코드 다건 생성 API 입니다.",
+    "responseType": "List<CodeDto>",
+    "requestType": "List<CodeDto>",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "",
+    "requestData": [
+      {
+        "description": "그룹코드배열",
+        "field": "grpCdList",
+        "type": "List<String>",
+        "example": "그룹코드배열",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드값",
+        "field": "grpCdVal",
+        "type": "String",
+        "example": "100",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드명",
+        "field": "grpCdNm",
+        "type": "String",
+        "example": "공통",
+        "hidden": "N"
+      },
+      {
+        "description": "코드값",
+        "field": "cdVal",
+        "type": "String",
+        "example": "001",
+        "hidden": "N"
+      },
+      {
+        "description": "코드명",
+        "field": "cdNm",
+        "type": "String",
+        "example": "하위코드",
+        "hidden": "N"
+      },
+      {
+        "description": "순번",
+        "field": "ordNo",
+        "type": "int",
+        "example": "순번",
+        "hidden": "N"
+      },
+      {
+        "description": "sfId",
+        "field": "sfId",
+        "type": "String",
+        "example": "a0f1e000001T6IqAAK",
+        "hidden": "N"
+      },
+      {
+        "description": "약어",
+        "field": "cdAbbrNm",
+        "type": "String",
+        "example": "약어",
+        "hidden": "N"
+      }
+    ],
+    "responseData": [
+      {
+        "description": "그룹코드배열",
+        "field": "grpCdList",
+        "type": "List<String>",
+        "example": "그룹코드배열",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드값",
+        "field": "grpCdVal",
+        "type": "String",
+        "example": "100",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드명",
+        "field": "grpCdNm",
+        "type": "String",
+        "example": "공통",
+        "hidden": "N"
+      },
+      {
+        "description": "코드값",
+        "field": "cdVal",
+        "type": "String",
+        "example": "001",
+        "hidden": "N"
+      },
+      {
+        "description": "코드명",
+        "field": "cdNm",
+        "type": "String",
+        "example": "하위코드",
+        "hidden": "N"
+      },
+      {
+        "description": "순번",
+        "field": "ordNo",
+        "type": "int",
+        "example": "순번",
+        "hidden": "N"
+      },
+      {
+        "description": "sfId",
+        "field": "sfId",
+        "type": "String",
+        "example": "a0f1e000001T6IqAAK",
+        "hidden": "N"
+      },
+      {
+        "description": "약어",
+        "field": "cdAbbrNm",
+        "type": "String",
+        "example": "약어",
+        "hidden": "N"
+      }
+    ],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_010"
+  },
+  {
+    "index": "011",
+    "url": "/mbr/v1/sys/code/update",
+    "method": "PUT",
+    "summary": "하위코드 수정",
+    "description": "하위코드 수정 API 입니다.",
+    "responseType": "CodeDto",
+    "requestType": "CodeDto",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "",
+    "requestData": [
+      {
+        "description": "그룹코드배열",
+        "field": "grpCdList",
+        "type": "List<String>",
+        "example": "그룹코드배열",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드값",
+        "field": "grpCdVal",
+        "type": "String",
+        "example": "100",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드명",
+        "field": "grpCdNm",
+        "type": "String",
+        "example": "공통",
+        "hidden": "N"
+      },
+      {
+        "description": "코드값",
+        "field": "cdVal",
+        "type": "String",
+        "example": "001",
+        "hidden": "N"
+      },
+      {
+        "description": "코드명",
+        "field": "cdNm",
+        "type": "String",
+        "example": "하위코드",
+        "hidden": "N"
+      },
+      {
+        "description": "순번",
+        "field": "ordNo",
+        "type": "int",
+        "example": "순번",
+        "hidden": "N"
+      },
+      {
+        "description": "sfId",
+        "field": "sfId",
+        "type": "String",
+        "example": "a0f1e000001T6IqAAK",
+        "hidden": "N"
+      },
+      {
+        "description": "약어",
+        "field": "cdAbbrNm",
+        "type": "String",
+        "example": "약어",
+        "hidden": "N"
+      }
+    ],
+    "responseData": [
+      {
+        "description": "그룹코드배열",
+        "field": "grpCdList",
+        "type": "List<String>",
+        "example": "그룹코드배열",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드값",
+        "field": "grpCdVal",
+        "type": "String",
+        "example": "100",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드명",
+        "field": "grpCdNm",
+        "type": "String",
+        "example": "공통",
+        "hidden": "N"
+      },
+      {
+        "description": "코드값",
+        "field": "cdVal",
+        "type": "String",
+        "example": "001",
+        "hidden": "N"
+      },
+      {
+        "description": "코드명",
+        "field": "cdNm",
+        "type": "String",
+        "example": "하위코드",
+        "hidden": "N"
+      },
+      {
+        "description": "순번",
+        "field": "ordNo",
+        "type": "int",
+        "example": "순번",
+        "hidden": "N"
+      },
+      {
+        "description": "sfId",
+        "field": "sfId",
+        "type": "String",
+        "example": "a0f1e000001T6IqAAK",
+        "hidden": "N"
+      },
+      {
+        "description": "약어",
+        "field": "cdAbbrNm",
+        "type": "String",
+        "example": "약어",
+        "hidden": "N"
+      }
+    ],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_011"
+  },
+  {
+    "index": "012",
+    "url": "/mbr/v1/sys/code/update/list",
+    "method": "PUT",
+    "summary": "하위코드 다건 수정",
+    "description": "하위코드 다건 수정 API 입니다.",
+    "responseType": "List<CodeDto>",
+    "requestType": "List<CodeDto>",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "",
+    "requestData": [
+      {
+        "description": "그룹코드배열",
+        "field": "grpCdList",
+        "type": "List<String>",
+        "example": "그룹코드배열",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드값",
+        "field": "grpCdVal",
+        "type": "String",
+        "example": "100",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드명",
+        "field": "grpCdNm",
+        "type": "String",
+        "example": "공통",
+        "hidden": "N"
+      },
+      {
+        "description": "코드값",
+        "field": "cdVal",
+        "type": "String",
+        "example": "001",
+        "hidden": "N"
+      },
+      {
+        "description": "코드명",
+        "field": "cdNm",
+        "type": "String",
+        "example": "하위코드",
+        "hidden": "N"
+      },
+      {
+        "description": "순번",
+        "field": "ordNo",
+        "type": "int",
+        "example": "순번",
+        "hidden": "N"
+      },
+      {
+        "description": "sfId",
+        "field": "sfId",
+        "type": "String",
+        "example": "a0f1e000001T6IqAAK",
+        "hidden": "N"
+      },
+      {
+        "description": "약어",
+        "field": "cdAbbrNm",
+        "type": "String",
+        "example": "약어",
+        "hidden": "N"
+      }
+    ],
+    "responseData": [
+      {
+        "description": "그룹코드배열",
+        "field": "grpCdList",
+        "type": "List<String>",
+        "example": "그룹코드배열",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드값",
+        "field": "grpCdVal",
+        "type": "String",
+        "example": "100",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드명",
+        "field": "grpCdNm",
+        "type": "String",
+        "example": "공통",
+        "hidden": "N"
+      },
+      {
+        "description": "코드값",
+        "field": "cdVal",
+        "type": "String",
+        "example": "001",
+        "hidden": "N"
+      },
+      {
+        "description": "코드명",
+        "field": "cdNm",
+        "type": "String",
+        "example": "하위코드",
+        "hidden": "N"
+      },
+      {
+        "description": "순번",
+        "field": "ordNo",
+        "type": "int",
+        "example": "순번",
+        "hidden": "N"
+      },
+      {
+        "description": "sfId",
+        "field": "sfId",
+        "type": "String",
+        "example": "a0f1e000001T6IqAAK",
+        "hidden": "N"
+      },
+      {
+        "description": "약어",
+        "field": "cdAbbrNm",
+        "type": "String",
+        "example": "약어",
+        "hidden": "N"
+      }
+    ],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_012"
+  },
+  {
+    "index": "013",
+    "url": "/mbr/v1/sys/code/delete",
+    "method": "DELETE",
+    "summary": "하위코드 삭제",
+    "description": "하위코드 삭제 API 입니다.",
+    "responseType": "CodeDto",
+    "requestType": "CodeDto",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "",
+    "requestData": [
+      {
+        "description": "그룹코드배열",
+        "field": "grpCdList",
+        "type": "List<String>",
+        "example": "그룹코드배열",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드값",
+        "field": "grpCdVal",
+        "type": "String",
+        "example": "100",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드명",
+        "field": "grpCdNm",
+        "type": "String",
+        "example": "공통",
+        "hidden": "N"
+      },
+      {
+        "description": "코드값",
+        "field": "cdVal",
+        "type": "String",
+        "example": "001",
+        "hidden": "N"
+      },
+      {
+        "description": "코드명",
+        "field": "cdNm",
+        "type": "String",
+        "example": "하위코드",
+        "hidden": "N"
+      },
+      {
+        "description": "순번",
+        "field": "ordNo",
+        "type": "int",
+        "example": "순번",
+        "hidden": "N"
+      },
+      {
+        "description": "sfId",
+        "field": "sfId",
+        "type": "String",
+        "example": "a0f1e000001T6IqAAK",
+        "hidden": "N"
+      },
+      {
+        "description": "약어",
+        "field": "cdAbbrNm",
+        "type": "String",
+        "example": "약어",
+        "hidden": "N"
+      }
+    ],
+    "responseData": [
+      {
+        "description": "그룹코드배열",
+        "field": "grpCdList",
+        "type": "List<String>",
+        "example": "그룹코드배열",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드값",
+        "field": "grpCdVal",
+        "type": "String",
+        "example": "100",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드명",
+        "field": "grpCdNm",
+        "type": "String",
+        "example": "공통",
+        "hidden": "N"
+      },
+      {
+        "description": "코드값",
+        "field": "cdVal",
+        "type": "String",
+        "example": "001",
+        "hidden": "N"
+      },
+      {
+        "description": "코드명",
+        "field": "cdNm",
+        "type": "String",
+        "example": "하위코드",
+        "hidden": "N"
+      },
+      {
+        "description": "순번",
+        "field": "ordNo",
+        "type": "int",
+        "example": "순번",
+        "hidden": "N"
+      },
+      {
+        "description": "sfId",
+        "field": "sfId",
+        "type": "String",
+        "example": "a0f1e000001T6IqAAK",
+        "hidden": "N"
+      },
+      {
+        "description": "약어",
+        "field": "cdAbbrNm",
+        "type": "String",
+        "example": "약어",
+        "hidden": "N"
+      }
+    ],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_013"
+  },
+  {
+    "index": "014",
+    "url": "/mbr/v1/sys/code/delete/list",
+    "method": "DELETE",
+    "summary": "하위코드 다건 삭제",
+    "description": "하위코드 다건 삭제 API 입니다.",
+    "responseType": "List<CodeDto>",
+    "requestType": "List<CodeDto>",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "",
+    "requestData": [
+      {
+        "description": "그룹코드배열",
+        "field": "grpCdList",
+        "type": "List<String>",
+        "example": "그룹코드배열",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드값",
+        "field": "grpCdVal",
+        "type": "String",
+        "example": "100",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드명",
+        "field": "grpCdNm",
+        "type": "String",
+        "example": "공통",
+        "hidden": "N"
+      },
+      {
+        "description": "코드값",
+        "field": "cdVal",
+        "type": "String",
+        "example": "001",
+        "hidden": "N"
+      },
+      {
+        "description": "코드명",
+        "field": "cdNm",
+        "type": "String",
+        "example": "하위코드",
+        "hidden": "N"
+      },
+      {
+        "description": "순번",
+        "field": "ordNo",
+        "type": "int",
+        "example": "순번",
+        "hidden": "N"
+      },
+      {
+        "description": "sfId",
+        "field": "sfId",
+        "type": "String",
+        "example": "a0f1e000001T6IqAAK",
+        "hidden": "N"
+      },
+      {
+        "description": "약어",
+        "field": "cdAbbrNm",
+        "type": "String",
+        "example": "약어",
+        "hidden": "N"
+      }
+    ],
+    "responseData": [
+      {
+        "description": "그룹코드배열",
+        "field": "grpCdList",
+        "type": "List<String>",
+        "example": "그룹코드배열",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드값",
+        "field": "grpCdVal",
+        "type": "String",
+        "example": "100",
+        "hidden": "N"
+      },
+      {
+        "description": "그룹코드명",
+        "field": "grpCdNm",
+        "type": "String",
+        "example": "공통",
+        "hidden": "N"
+      },
+      {
+        "description": "코드값",
+        "field": "cdVal",
+        "type": "String",
+        "example": "001",
+        "hidden": "N"
+      },
+      {
+        "description": "코드명",
+        "field": "cdNm",
+        "type": "String",
+        "example": "하위코드",
+        "hidden": "N"
+      },
+      {
+        "description": "순번",
+        "field": "ordNo",
+        "type": "int",
+        "example": "순번",
+        "hidden": "N"
+      },
+      {
+        "description": "sfId",
+        "field": "sfId",
+        "type": "String",
+        "example": "a0f1e000001T6IqAAK",
+        "hidden": "N"
+      },
+      {
+        "description": "약어",
+        "field": "cdAbbrNm",
+        "type": "String",
+        "example": "약어",
+        "hidden": "N"
+      }
+    ],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_014"
+  },
+  {
+    "index": "015",
+    "url": "/api/damoTest",
+    "method": "GET",
+    "summary": "",
+    "description": "",
+    "responseType": "",
+    "requestType": "",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "",
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_015"
+  },
+  {
+    "index": "016",
+    "url": "/mbr/v1/find/list",
+    "method": "GET",
+    "summary": "",
+    "description": "",
+    "responseType": "MbrResultDto",
+    "requestType": "",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "ADMIN > 회원 > 회원 정보",
+    "responseData": [
+      {
+        "description": "데이터 행 번호",
+        "field": "rowNum",
+        "type": "int",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "데이터 전체 건수",
+        "field": "totalCnt",
+        "type": "int",
+        "example": "99",
+        "hidden": "N"
+      },
+      {
+        "description": "현재 페이지",
+        "field": "currentPage",
+        "type": "int",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "페이지에 보여질 목록 건수",
+        "field": "pageSize",
+        "type": "int",
+        "example": "10",
+        "hidden": "N"
+      },
+      {
+        "description": "전체 페이지 수",
+        "field": "pageCount",
+        "type": "int",
+        "example": "12",
+        "hidden": "N"
+      },
+      {
+        "description": "회원 목록",
+        "field": "list",
+        "type": "List<SearchResponseDto>",
+        "example": "회원 목록",
+        "hidden": "N",
+        "listData": []
+      }
+    ],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_016"
+  },
+  {
+    "index": "017",
+    "url": "/mbr/v1/find/count",
+    "method": "GET",
+    "summary": "",
+    "description": "",
+    "responseType": "Long",
+    "requestType": "",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "",
+    "responseData": [],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_017"
+  },
+  {
+    "index": "018",
+    "url": "/mbr/v1/teacher/find/list",
+    "method": "GET",
+    "summary": "[공통 팝업] 조직 조회 API v2",
+    "description": "[공통 팝업] 조직 조회 API v2",
+    "responseType": "CmmOgztParentDto",
+    "requestType": "ReqCmmOgztV2ParamDto",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "ADMIN > 회원 > 회원 정보, ADMIN > 회원 > 회원 정보 > 회원 상세 정보",
+    "requestData": [
+      {
+        "description": "조회 일자",
+        "field": "day",
+        "type": "String",
+        "example": "2023.04.18",
+        "hidden": "N"
+      },
+      {
+        "description": "조회 년월",
+        "field": "ym",
+        "type": "String",
+        "example": "2023.04",
+        "hidden": "N"
+      },
+      {
+        "description": "아카이빙 여부 조회 년월",
+        "field": "ymd",
+        "type": "String",
+        "example": "2021.07.31",
+        "hidden": "N"
+      },
+      {
+        "description": "조회 년도",
+        "field": "yr",
+        "type": "String",
+        "example": "2023",
+        "hidden": "N"
+      },
+      {
+        "description": "조회 시작 년월",
+        "field": "endYm",
+        "type": "String",
+        "example": "2020.01",
+        "hidden": "N"
+      },
+      {
+        "description": "조회 종료 년월",
+        "field": "strYm",
+        "type": "String",
+        "example": "2023.12",
+        "hidden": "N"
+      },
+      {
+        "description": "조회 시작 년월일",
+        "field": "endYmd",
+        "type": "String",
+        "example": "2020.01.01",
+        "hidden": "N"
+      },
+      {
+        "description": "조회 종료 년월일",
+        "field": "strYmd",
+        "type": "String",
+        "example": "2023.12.31",
+        "hidden": "N"
+      },
+      {
+        "description": "브랜드 코드",
+        "field": "brndCd",
+        "type": "String",
+        "example": "1: 눈높이, 2: 솔루니, 3: 차이홍, 4: 다이렉트사업팀, 5: 드림멘토사업팀, 6: 디지털사업본부",
+        "hidden": "N"
+      },
+      {
+        "description": "상위 조직 레벨 코드",
+        "field": "upprOgztLevelCd",
+        "type": "String",
+        "example": "sctr: 부문, hofc: 본부, bedu: 교육국, team: 팀, ch: 채널, tchr: 선생님",
+        "hidden": "N"
+      },
+      {
+        "description": "상위 조직 코드(부모 조회)",
+        "field": "upprOgztCd",
+        "type": "List<String>",
+        "example": "['T332', 'T324']",
+        "hidden": "N"
+      }
+    ],
+    "responseData": [
+      {
+        "description": "조직 코드",
+        "field": "cd",
+        "type": "String",
+        "example": "T324",
+        "hidden": "N"
+      },
+      {
+        "description": "조직명",
+        "field": "name",
+        "type": "String",
+        "example": "서울서북본부",
+        "hidden": "N"
+      },
+      {
+        "description": "파라미터용 조직 코드",
+        "field": "paramOgztCd",
+        "type": "String",
+        "example": "T324",
+        "hidden": "N"
+      },
+      {
+        "description": "조직 레벨 CD (팝업에서 하위 조직 찾을 때 사용)",
+        "field": "ogztLevelCd",
+        "type": "String",
+        "example": "부문: 'sctr' | 본부: 'hofc' | 교육국: 'bedu' | 팀: 'team' | 채널: 'ch'",
+        "hidden": "N"
+      },
+      {
+        "description": "상위 조직 코드 (팝업에서 하위 조직 찾을 때 사용)",
+        "field": "upprOgztCd",
+        "type": "String",
+        "example": "001",
+        "hidden": "N"
+      },
+      {
+        "description": "정렬순서",
+        "field": "ordNo",
+        "type": "String",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "상위 조직 명 (상위의 상위명)",
+        "field": "upprOgztName",
+        "type": "String",
+        "example": "서울서북본부",
+        "hidden": "N"
+      },
+      {
+        "description": "상위 조직 코드 (팝업에서 하위 조직 찾을 때 사용)",
+        "field": "ogztCd",
+        "type": "String",
+        "example": "001",
+        "hidden": "N"
+      },
+      {
+        "description": "상위 조직 명 (상위의 상위명)",
+        "field": "ogztNm",
+        "type": "String",
+        "example": "서울서북본부",
+        "hidden": "N"
+      },
+      {
+        "description": "하위 정보",
+        "field": "childList",
+        "type": "List<CmmOgztDto>",
+        "example": "",
+        "hidden": "N",
+        "listData": [
+          {
+            "description": "조직 코드",
+            "field": "cd",
+            "type": "String",
+            "example": "T324",
+            "hidden": "N"
+          },
+          {
+            "description": "조직명",
+            "field": "name",
+            "type": "String",
+            "example": "서울서북본부",
+            "hidden": "N"
+          },
+          {
+            "description": "파라미터용 조직 코드",
+            "field": "paramOgztCd",
+            "type": "String",
+            "example": "T324",
+            "hidden": "N"
+          },
+          {
+            "description": "조직 레벨 CD (팝업에서 하위 조직 찾을 때 사용)",
+            "field": "ogztLevelCd",
+            "type": "String",
+            "example": "부문: 'sctr' | 본부: 'hofc' | 교육국: 'bedu' | 팀: 'team' | 채널: 'ch'",
+            "hidden": "N"
+          },
+          {
+            "description": "상위 조직 코드 (팝업에서 하위 조직 찾을 때 사용)",
+            "field": "upprOgztCd",
+            "type": "String",
+            "example": "001",
+            "hidden": "N"
+          },
+          {
+            "description": "정렬순서",
+            "field": "ordNo",
+            "type": "String",
+            "example": "1",
+            "hidden": "N"
+          },
+          {
+            "description": "상위 조직 명 (상위의 상위명)",
+            "field": "upprOgztName",
+            "type": "String",
+            "example": "서울서북본부",
+            "hidden": "N"
+          },
+          {
+            "description": "상위 조직 코드 (팝업에서 하위 조직 찾을 때 사용)",
+            "field": "ogztCd",
+            "type": "String",
+            "example": "001",
+            "hidden": "N"
+          },
+          {
+            "description": "상위 조직 명 (상위의 상위명)",
+            "field": "ogztNm",
+            "type": "String",
+            "example": "서울서북본부",
+            "hidden": "N"
+          }
+        ]
+      }
+    ],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_018"
+  },
+  {
+    "index": "019",
+    "url": "/mbr/v1/find/xlsx",
+    "method": "GET",
+    "summary": "",
+    "description": "",
+    "responseType": "List<StudentExcelColumnDto>",
+    "requestType": "",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "ADMIN > 회원 > 회원 정보",
+    "responseData": [],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_019"
+  },
+  {
+    "index": "020",
+    "url": "/mbr/v1/find/xlsx/count",
+    "method": "GET",
+    "summary": "",
+    "description": "",
+    "responseType": "Long",
+    "requestType": "",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "",
+    "responseData": [],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_020"
+  },
+  {
+    "index": "021",
+    "url": "/mbr/v1/find/dtl",
+    "method": "POST",
+    "summary": "회원 상세 조회",
+    "description": "회원 상세 조회",
+    "responseType": "MbrDtlResDto",
+    "requestType": "MbrDtlReqDto",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "ADMIN > 회원 > 회원 정보 > 회원 상세 정보",
+    "requestData": [
+      {
+        "description": "회원 번호",
+        "field": "mbrNo",
+        "type": "String",
+        "example": "1234",
+        "hidden": "N"
+      },
+      {
+        "description": "승인이력 일련번호",
+        "field": "aprvlCrerSqno",
+        "type": "String",
+        "example": "111",
+        "hidden": "N"
+      },
+      {
+        "description": "브래드 코드",
+        "field": "bdCd",
+        "type": "String",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "상품 코드",
+        "field": "subjCd",
+        "type": "String",
+        "example": "K",
+        "hidden": "N"
+      },
+      {
+        "description": "수업 순번 번호",
+        "field": "tclsSeqNo",
+        "type": "String",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "상담 일자",
+        "field": "adDt",
+        "type": "String",
+        "example": "20240909",
+        "hidden": "N"
+      },
+      {
+        "description": "상담 번호",
+        "field": "adNo",
+        "type": "String",
+        "example": "21000",
+        "hidden": "N"
+      },
+      {
+        "description": "상담 순번 번호",
+        "field": "adSeqNo",
+        "type": "String",
+        "example": "1",
+        "hidden": "N"
+      }
+    ],
+    "responseData": [
+      {
+        "description": "회원 기본 정보",
+        "field": "mbrBsicInfo",
+        "type": "MbrBsicInfoDto",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "회원 상태",
+        "field": "mbrState",
+        "type": "MbrStateDto",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "동의 정보",
+        "field": "mbrAgrInfo",
+        "type": "MbrAgrInfoDto",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "보호자 정보",
+        "field": "mbrRelsInfoList",
+        "type": "List<MbrRelsInfoDto>",
+        "example": "",
+        "hidden": "N",
+        "listData": [
+          {
+            "description": "보호자 명",
+            "field": "psvNm",
+            "type": "String",
+            "example": "홍상직",
+            "hidden": "N"
+          },
+          {
+            "description": "관계(C009)",
+            "field": "relsDvCd",
+            "type": "String",
+            "example": "2",
+            "hidden": "N"
+          },
+          {
+            "description": "관계 명",
+            "field": "relsDvNm",
+            "type": "String",
+            "example": "부",
+            "hidden": "N"
+          },
+          {
+            "description": "휴대폰 번호",
+            "field": "psvHp",
+            "type": "String",
+            "example": "01043218765",
+            "hidden": "N"
+          },
+          {
+            "description": "마카다미아 ID",
+            "field": "mcdmId",
+            "type": "String",
+            "example": "0000000",
+            "hidden": "N"
+          }
+        ]
+      },
+      {
+        "description": "교육지원비 관리",
+        "field": "mbrEduSfn",
+        "type": "MbrEduSfndDto",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "학습 정보",
+        "field": "mbrStdyInfo",
+        "type": "MbrStdyInfoDto",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "회원 학습 현황",
+        "field": "mbrStdyCstatList",
+        "type": "List<MbrStdyCstatDto>",
+        "example": "",
+        "hidden": "N",
+        "listData": [
+          {
+            "description": "브랜드 코드",
+            "field": "bdCd",
+            "type": "String",
+            "example": "1",
+            "hidden": "N"
+          },
+          {
+            "description": "상품 코드",
+            "field": "subjCd",
+            "type": "String",
+            "example": "E",
+            "hidden": "N"
+          },
+          {
+            "description": "과목명",
+            "field": "subjNm",
+            "type": "String",
+            "example": "눈높이영어",
+            "hidden": "N"
+          },
+          {
+            "description": "수업 순번",
+            "field": "tclsSeqNo",
+            "type": "String",
+            "example": "1",
+            "hidden": "N"
+          },
+          {
+            "description": "수업 맞춤 횟수",
+            "field": "tclsTotCnt",
+            "type": "String",
+            "example": "2",
+            "hidden": "N"
+          },
+          {
+            "description": "학습 상태(N016)",
+            "field": "stdyStatCd",
+            "type": "String",
+            "example": "2",
+            "hidden": "N"
+          },
+          {
+            "description": "학습 상태 명",
+            "field": "stdyStatNm",
+            "type": "String",
+            "example": "퇴회",
+            "hidden": "N"
+          },
+          {
+            "description": "관리 선생님 ID",
+            "field": "tchrEid",
+            "type": "String",
+            "example": "1234",
+            "hidden": "N"
+          },
+          {
+            "description": "관리 선생님 명",
+            "field": "tchrNm",
+            "type": "String",
+            "example": "홍길동",
+            "hidden": "N"
+          },
+          {
+            "description": "요일(N005)",
+            "field": "dowCd",
+            "type": "String",
+            "example": "1",
+            "hidden": "N"
+          },
+          {
+            "description": "요일 명",
+            "field": "dowNm",
+            "type": "String",
+            "example": "월요일",
+            "hidden": "N"
+          },
+          {
+            "description": "옵션",
+            "field": "opt",
+            "type": "String",
+            "example": "내방",
+            "hidden": "N"
+          },
+          {
+            "description": "학습 시작일(YYYYMMDD)",
+            "field": "firstStdyDt",
+            "type": "String",
+            "example": "20240901",
+            "hidden": "N"
+          },
+          {
+            "description": "학습 종료일(YYYYMMDD)",
+            "field": "finalStdyDt",
+            "type": "String",
+            "example": "20240902",
+            "hidden": "N"
+          },
+          {
+            "description": "본부 명",
+            "field": "hofcNm",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "교육국 명",
+            "field": "beduNm",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "팀 코드",
+            "field": "teamCd",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "채널 명",
+            "field": "chNm",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "입회 사용 코드",
+            "field": "jnRsnCd",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "입회 사유 코드 명",
+            "field": "jnRsnNm",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "입금 유형 코드",
+            "field": "dpstTypeCd",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "입금 유형 코드 명",
+            "field": "dpstTypeNm",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "이체일",
+            "field": "wtdlDt",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "최종 회비 납부 월",
+            "field": "finalMfeeFpayYm",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "이월금",
+            "field": "crdfwdAmt",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "미납금",
+            "field": "upayAmt",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "최종회비입금일자",
+            "field": "finalMfeeDpstDt",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "최초 입회일",
+            "field": "firstJnDt",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "최종 입/복회 일자",
+            "field": "finalJnDt",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "최종 퇴회일",
+            "field": "doutAprvlDt",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "최종 변경자 ID",
+            "field": "finalChgrId",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "최종 변경자 명",
+            "field": "finalChgrNm",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          }
+        ]
+      },
+      {
+        "description": "확인서/승인 이력",
+        "field": "mbrAprvlCrerList",
+        "type": "List<MbrAprvlCrerDto>",
+        "example": "",
+        "hidden": "N",
+        "listData": [
+          {
+            "description": "승인이력 일련번호",
+            "field": "aprvlCrerSqno",
+            "type": "String",
+            "example": "1234",
+            "hidden": "N"
+          },
+          {
+            "description": "구분",
+            "field": "chgDvClassbCd",
+            "type": "String",
+            "example": "1",
+            "hidden": "N"
+          },
+          {
+            "description": "구분 명",
+            "field": "chgDvClassbNm",
+            "type": "String",
+            "example": "입회",
+            "hidden": "N"
+          },
+          {
+            "description": "브랜드 코드",
+            "field": "bdCd",
+            "type": "String",
+            "example": "1",
+            "hidden": "N"
+          },
+          {
+            "description": "상품 코드",
+            "field": "subjCd",
+            "type": "String",
+            "example": "E",
+            "hidden": "N"
+          },
+          {
+            "description": "상품 명",
+            "field": "subjNm",
+            "type": "String",
+            "example": "눈높이영어",
+            "hidden": "N"
+          },
+          {
+            "description": "등록일(YYYYMMDD)",
+            "field": "rgstDt",
+            "type": "String",
+            "example": "20240909",
+            "hidden": "N"
+          },
+          {
+            "description": "등록자 ID",
+            "field": "firstRgtnId",
+            "type": "String",
+            "example": "1234",
+            "hidden": "N"
+          },
+          {
+            "description": "등록자 명",
+            "field": "firstRgtnNm",
+            "type": "String",
+            "example": "홍길동",
+            "hidden": "N"
+          },
+          {
+            "description": "관리 선생님 ID",
+            "field": "tchrEid",
+            "type": "String",
+            "example": "1234",
+            "hidden": "N"
+          },
+          {
+            "description": "관리 선생님 명",
+            "field": "tchrNm",
+            "type": "String",
+            "example": "홍길동",
+            "hidden": "N"
+          },
+          {
+            "description": "승인일(YYYYMMDD)",
+            "field": "dirtrAprvlDt",
+            "type": "String",
+            "example": "20240909",
+            "hidden": "N"
+          },
+          {
+            "description": "승인자 ID",
+            "field": "aprvlDirtrTchrEid",
+            "type": "String",
+            "example": "1234",
+            "hidden": "N"
+          },
+          {
+            "description": "승인자 명",
+            "field": "aprvlDirtrTchrNm",
+            "type": "String",
+            "example": "홍길동",
+            "hidden": "N"
+          },
+          {
+            "description": "승인 상태 코드",
+            "field": "aprvlStatCd",
+            "type": "String",
+            "example": "1",
+            "hidden": "N"
+          },
+          {
+            "description": "승인 상태 코드 명",
+            "field": "aprvlStatNm",
+            "type": "String",
+            "example": "대기중",
+            "hidden": "N"
+          },
+          {
+            "description": "변동 구분 코드",
+            "field": "chgDvCd",
+            "type": "String",
+            "example": "AC",
+            "hidden": "N"
+          },
+          {
+            "description": "변동 구분 코드 명",
+            "field": "chgDvNm",
+            "type": "String",
+            "example": "입회취소",
+            "hidden": "N"
+          },
+          {
+            "description": "요일 코드",
+            "field": "dowCd",
+            "type": "String",
+            "example": "1",
+            "hidden": "N"
+          },
+          {
+            "description": "요일 코드명",
+            "field": "dowNm",
+            "type": "String",
+            "example": "월요일",
+            "hidden": "N"
+          },
+          {
+            "description": "확인서 옵션",
+            "field": "opt",
+            "type": "String",
+            "example": "내방, 1:1",
+            "hidden": "N"
+          },
+          {
+            "description": "학습 시작일",
+            "field": "stdyStrDt",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "첫달 학습횟수, 변경후 학습 횟수, 퇴회 학습 횟수",
+            "field": "jnDoutCary",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "본부 명",
+            "field": "hofcNm",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "교육국 명",
+            "field": "beduNm",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "팀 CD",
+            "field": "teamCd",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "채널 명",
+            "field": "chNm",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "입회 사유",
+            "field": "jnRsnCd",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "입회 사유 코드 명",
+            "field": "jnRsnNm",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "소개 여부",
+            "field": "itrYn",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "소개 본부 명",
+            "field": "itrHofcNm",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "소개 교육국 명",
+            "field": "itrBeduNm",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "소개 팀 CD",
+            "field": "itrTeamCd",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "소개 채널 명",
+            "field": "itrChNm",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "소개 교사 id",
+            "field": "itrTchrEid",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "소개 교사 명",
+            "field": "itrTchrNm",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "입금 유형 코드",
+            "field": "dpstTypeCd",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "입금 유형 명",
+            "field": "dpstTypeNm",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "회비 납부 일",
+            "field": "finalMfeeDpstDt",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "변경 예정일",
+            "field": "chgPreargDt",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "변경전 상품명",
+            "field": "bchgSubjNm",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "이월금",
+            "field": "crdfwdAmt",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "미납금",
+            "field": "upayAmt",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "학습 종료일",
+            "field": "stdyEndDt",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "퇴회 책임 교사 id",
+            "field": "pfmcTchrEid",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "퇴회 책임 교사 명",
+            "field": "pfmcTchrNm",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "퇴회 실적 본부 명",
+            "field": "pfmcHofcNm",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "퇴회 실적 교육국 명",
+            "field": "pfmcBeduNm",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "퇴회 실적 팀 CD",
+            "field": "pfmcTeamCd",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "퇴회 실적 채널 명",
+            "field": "pfmcChNm",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "체납 공제 여부",
+            "field": "flpaDducApplYn",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "변경후 내용",
+            "field": "aftrChngNm",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "변경전 내용",
+            "field": "bfrChngNm",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "변경전 선생님 사번",
+            "field": "bchgTchrEid",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "변경전 선생님 이름",
+            "field": "bchgTchrNm",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          }
+        ]
+      },
+      {
+        "description": "변동 이력",
+        "field": "mbrChgCrerList",
+        "type": "List<MbrChgCrerDto>",
+        "example": "",
+        "hidden": "N",
+        "listData": [
+          {
+            "description": "발생 구분 코드",
+            "field": "occuDvCd",
+            "type": "String",
+            "example": "1",
+            "hidden": "N"
+          },
+          {
+            "description": "발생 구분 코드명",
+            "field": "occuDvNm",
+            "type": "String",
+            "example": "드림스",
+            "hidden": "N"
+          },
+          {
+            "description": "변경 일자(YYYYMMDD)",
+            "field": "chgDt",
+            "type": "String",
+            "example": "20240909",
+            "hidden": "N"
+          },
+          {
+            "description": "변경 이력 순번 번호",
+            "field": "chgCrerSeqNo",
+            "type": "String",
+            "example": "1",
+            "hidden": "N"
+          },
+          {
+            "description": "변경 구분 Lebel",
+            "field": "chgLabel",
+            "type": "String",
+            "example": "1234",
+            "hidden": "N"
+          },
+          {
+            "description": "변경 전",
+            "field": "chgBefore",
+            "type": "String",
+            "example": "1학년",
+            "hidden": "N"
+          },
+          {
+            "description": "변경 후",
+            "field": "chgAfter",
+            "type": "String",
+            "example": "2학년",
+            "hidden": "N"
+          },
+          {
+            "description": "변경자 ID",
+            "field": "finalChgrId",
+            "type": "String",
+            "example": "12345",
+            "hidden": "N"
+          },
+          {
+            "description": "변경자 명",
+            "field": "finalChgrNm",
+            "type": "String",
+            "example": "홍길동",
+            "hidden": "N"
+          }
+        ]
+      },
+      {
+        "description": "일반상품 구매 이력",
+        "field": "mbrPubpdPchsList",
+        "type": "List<MbrPubpdPchsDto>",
+        "example": "",
+        "hidden": "N",
+        "listData": [
+          {
+            "description": "일반상품 구매 일련번호",
+            "field": "pubpdPchsSqno",
+            "type": "String",
+            "example": "123",
+            "hidden": "N"
+          },
+          {
+            "description": "브랜드 코드",
+            "field": "bdCd",
+            "type": "String",
+            "example": "1",
+            "hidden": "N"
+          },
+          {
+            "description": "상품 코드",
+            "field": "subjCd",
+            "type": "String",
+            "example": "DM1",
+            "hidden": "N"
+          },
+          {
+            "description": "상품 명",
+            "field": "subjNm",
+            "type": "String",
+            "example": "써밋스코어수학 중등1",
+            "hidden": "N"
+          },
+          {
+            "description": "구매 수량",
+            "field": "pchsVol",
+            "type": "String",
+            "example": "1",
+            "hidden": "N"
+          },
+          {
+            "description": "구매일(취소일)",
+            "field": "pchsDt",
+            "type": "String",
+            "example": "2024.01.08 12:00:00",
+            "hidden": "N"
+          },
+          {
+            "description": "구매처리자 ID",
+            "field": "tchrEid",
+            "type": "String",
+            "example": "12345",
+            "hidden": "N"
+          },
+          {
+            "description": "구매처리자 명",
+            "field": "tchrNm",
+            "type": "String",
+            "example": "홍길동",
+            "hidden": "N"
+          },
+          {
+            "description": "금액",
+            "field": "pchsCost",
+            "type": "String",
+            "example": "100",
+            "hidden": "N"
+          },
+          {
+            "description": "결제 상태 코드",
+            "field": "paymStatCd",
+            "type": "String",
+            "example": "2",
+            "hidden": "N"
+          },
+          {
+            "description": "결제 상태 코드 명",
+            "field": "paymStatNm",
+            "type": "String",
+            "example": "결제완료",
+            "hidden": "N"
+          },
+          {
+            "description": "배송지 주소",
+            "field": "shppAddr",
+            "type": "String",
+            "example": "서울시 관악구 보라매로 3길 23",
+            "hidden": "N"
+          },
+          {
+            "description": "약정 종료 일(YYYYMMDD)",
+            "field": "ctraEndDt",
+            "type": "String",
+            "example": "20260105",
+            "hidden": "N"
+          },
+          {
+            "description": "구매일",
+            "field": "pchsDtm",
+            "type": "String",
+            "example": "2024.01.08 12:00:00",
+            "hidden": "N"
+          },
+          {
+            "description": "취소일",
+            "field": "pchsCanclDtm",
+            "type": "String",
+            "example": "2024.01.08 12:00:00",
+            "hidden": "N"
+          },
+          {
+            "description": "결제일",
+            "field": "paymCptDtm",
+            "type": "String",
+            "example": "2024.01.08 12:00:00",
+            "hidden": "N"
+          },
+          {
+            "description": "결제취소일",
+            "field": "canclCptDtm",
+            "type": "String",
+            "example": "2024.01.08 12:00:00",
+            "hidden": "N"
+          }
+        ]
+      },
+      {
+        "description": "상담 이력",
+        "field": "mbrCustAdList",
+        "type": "List<MbrCustAdDto>",
+        "example": "",
+        "hidden": "N",
+        "listData": [
+          {
+            "description": "상담 일자(YYYYMMDD)",
+            "field": "adDt",
+            "type": "String",
+            "example": "20240909",
+            "hidden": "N"
+          },
+          {
+            "description": "상담 번호",
+            "field": "adNo",
+            "type": "String",
+            "example": "123",
+            "hidden": "N"
+          },
+          {
+            "description": "상담 순번",
+            "field": "adSeqNo",
+            "type": "String",
+            "example": "1",
+            "hidden": "N"
+          },
+          {
+            "description": "상담 요청일(YYYYMMDD)",
+            "field": "adRqsDt",
+            "type": "String",
+            "example": "20240909",
+            "hidden": "N"
+          },
+          {
+            "description": "상담 채널 구분 코드(SF100)",
+            "field": "adChDvCd",
+            "type": "String",
+            "example": "1",
+            "hidden": "N"
+          },
+          {
+            "description": "상담 채널 구분 코드 명",
+            "field": "adChDvNm",
+            "type": "String",
+            "example": "전화상담",
+            "hidden": "N"
+          },
+          {
+            "description": "상담 구분 코드(N036)",
+            "field": "adDvCd",
+            "type": "String",
+            "example": "3",
+            "hidden": "N"
+          },
+          {
+            "description": "상담 구분 코드 명",
+            "field": "adDvNm",
+            "type": "String",
+            "example": "입회연계",
+            "hidden": "N"
+          },
+          {
+            "description": "상담 처리 상태 코드(SF260)",
+            "field": "prcsStatCd",
+            "type": "String",
+            "example": "1",
+            "hidden": "N"
+          },
+          {
+            "description": "상담 처리 상태 코드 명",
+            "field": "prcsStatNm",
+            "type": "String",
+            "example": "상담대기",
+            "hidden": "N"
+          },
+          {
+            "description": "상담 교사 사원번호",
+            "field": "adTchrEid",
+            "type": "String",
+            "example": "1234",
+            "hidden": "N"
+          },
+          {
+            "description": "상담 교사 명",
+            "field": "adTchrNm",
+            "type": "String",
+            "example": "홍길동",
+            "hidden": "N"
+          },
+          {
+            "description": "상담 제목",
+            "field": "adTitle",
+            "type": "String",
+            "example": "상담 제목",
+            "hidden": "N"
+          },
+          {
+            "description": "상담 내용",
+            "field": "adDstm",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "답변 내용",
+            "field": "adRpyCntn",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "답변 일자",
+            "field": "adRpyDt",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "메모1",
+            "field": "adMemo1",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "메모2",
+            "field": "adMemo2",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "메모3",
+            "field": "adMemo3",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "메모4",
+            "field": "adMemo4",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "메모5",
+            "field": "adMemo5",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "메모 작성일1",
+            "field": "wrteDt1",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "메모 작성일2",
+            "field": "wrteDt2",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "메모 작성일3",
+            "field": "wrteDt3",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "메모 작성일4",
+            "field": "wrteDt4",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "메모 작성일5",
+            "field": "wrteDt5",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "상담 과목명",
+            "field": "adSubjNm",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "상담원명",
+            "field": "cnslId",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          },
+          {
+            "description": "접수일자",
+            "field": "accptDt",
+            "type": "String",
+            "example": "",
+            "hidden": "N"
+          }
+        ]
+      }
+    ],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_021"
+  },
+  {
+    "index": "022",
+    "url": "/mbr/v1/find/dtl/stdycstat",
+    "method": "POST",
+    "summary": "회원 상세 > 학습현황",
+    "description": "학습 현황 상세",
+    "responseType": "MbrStdyCstatDto",
+    "requestType": "MbrDtlReqDto",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "ADMIN > 회원 > 회원 정보 > 회원 상세 정보",
+    "requestData": [
+      {
+        "description": "회원 번호",
+        "field": "mbrNo",
+        "type": "String",
+        "example": "1234",
+        "hidden": "N"
+      },
+      {
+        "description": "승인이력 일련번호",
+        "field": "aprvlCrerSqno",
+        "type": "String",
+        "example": "111",
+        "hidden": "N"
+      },
+      {
+        "description": "브래드 코드",
+        "field": "bdCd",
+        "type": "String",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "상품 코드",
+        "field": "subjCd",
+        "type": "String",
+        "example": "K",
+        "hidden": "N"
+      },
+      {
+        "description": "수업 순번 번호",
+        "field": "tclsSeqNo",
+        "type": "String",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "상담 일자",
+        "field": "adDt",
+        "type": "String",
+        "example": "20240909",
+        "hidden": "N"
+      },
+      {
+        "description": "상담 번호",
+        "field": "adNo",
+        "type": "String",
+        "example": "21000",
+        "hidden": "N"
+      },
+      {
+        "description": "상담 순번 번호",
+        "field": "adSeqNo",
+        "type": "String",
+        "example": "1",
+        "hidden": "N"
+      }
+    ],
+    "responseData": [
+      {
+        "description": "브랜드 코드",
+        "field": "bdCd",
+        "type": "String",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "상품 코드",
+        "field": "subjCd",
+        "type": "String",
+        "example": "E",
+        "hidden": "N"
+      },
+      {
+        "description": "과목명",
+        "field": "subjNm",
+        "type": "String",
+        "example": "눈높이영어",
+        "hidden": "N"
+      },
+      {
+        "description": "수업 순번",
+        "field": "tclsSeqNo",
+        "type": "String",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "수업 맞춤 횟수",
+        "field": "tclsTotCnt",
+        "type": "String",
+        "example": "2",
+        "hidden": "N"
+      },
+      {
+        "description": "학습 상태(N016)",
+        "field": "stdyStatCd",
+        "type": "String",
+        "example": "2",
+        "hidden": "N"
+      },
+      {
+        "description": "학습 상태 명",
+        "field": "stdyStatNm",
+        "type": "String",
+        "example": "퇴회",
+        "hidden": "N"
+      },
+      {
+        "description": "관리 선생님 ID",
+        "field": "tchrEid",
+        "type": "String",
+        "example": "1234",
+        "hidden": "N"
+      },
+      {
+        "description": "관리 선생님 명",
+        "field": "tchrNm",
+        "type": "String",
+        "example": "홍길동",
+        "hidden": "N"
+      },
+      {
+        "description": "요일(N005)",
+        "field": "dowCd",
+        "type": "String",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "요일 명",
+        "field": "dowNm",
+        "type": "String",
+        "example": "월요일",
+        "hidden": "N"
+      },
+      {
+        "description": "옵션",
+        "field": "opt",
+        "type": "String",
+        "example": "내방",
+        "hidden": "N"
+      },
+      {
+        "description": "학습 시작일(YYYYMMDD)",
+        "field": "firstStdyDt",
+        "type": "String",
+        "example": "20240901",
+        "hidden": "N"
+      },
+      {
+        "description": "학습 종료일(YYYYMMDD)",
+        "field": "finalStdyDt",
+        "type": "String",
+        "example": "20240902",
+        "hidden": "N"
+      },
+      {
+        "description": "본부 명",
+        "field": "hofcNm",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "교육국 명",
+        "field": "beduNm",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "팀 코드",
+        "field": "teamCd",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "채널 명",
+        "field": "chNm",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "입회 사용 코드",
+        "field": "jnRsnCd",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "입회 사유 코드 명",
+        "field": "jnRsnNm",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "입금 유형 코드",
+        "field": "dpstTypeCd",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "입금 유형 코드 명",
+        "field": "dpstTypeNm",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "이체일",
+        "field": "wtdlDt",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "최종 회비 납부 월",
+        "field": "finalMfeeFpayYm",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "이월금",
+        "field": "crdfwdAmt",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "미납금",
+        "field": "upayAmt",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "최종회비입금일자",
+        "field": "finalMfeeDpstDt",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "최초 입회일",
+        "field": "firstJnDt",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "최종 입/복회 일자",
+        "field": "finalJnDt",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "최종 퇴회일",
+        "field": "doutAprvlDt",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "최종 변경자 ID",
+        "field": "finalChgrId",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "최종 변경자 명",
+        "field": "finalChgrNm",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      }
+    ],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_022"
+  },
+  {
+    "index": "023",
+    "url": "/mbr/v1/find/dtl/aprvlcrer",
+    "method": "POST",
+    "summary": "회원 상세 > 확인서/승인이력 상세",
+    "description": "학습 현황 상세",
+    "responseType": "MbrAprvlCrerDto",
+    "requestType": "MbrDtlReqDto",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "ADMIN > 회원 > 회원 정보 > 회원 상세 정보",
+    "requestData": [
+      {
+        "description": "회원 번호",
+        "field": "mbrNo",
+        "type": "String",
+        "example": "1234",
+        "hidden": "N"
+      },
+      {
+        "description": "승인이력 일련번호",
+        "field": "aprvlCrerSqno",
+        "type": "String",
+        "example": "111",
+        "hidden": "N"
+      },
+      {
+        "description": "브래드 코드",
+        "field": "bdCd",
+        "type": "String",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "상품 코드",
+        "field": "subjCd",
+        "type": "String",
+        "example": "K",
+        "hidden": "N"
+      },
+      {
+        "description": "수업 순번 번호",
+        "field": "tclsSeqNo",
+        "type": "String",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "상담 일자",
+        "field": "adDt",
+        "type": "String",
+        "example": "20240909",
+        "hidden": "N"
+      },
+      {
+        "description": "상담 번호",
+        "field": "adNo",
+        "type": "String",
+        "example": "21000",
+        "hidden": "N"
+      },
+      {
+        "description": "상담 순번 번호",
+        "field": "adSeqNo",
+        "type": "String",
+        "example": "1",
+        "hidden": "N"
+      }
+    ],
+    "responseData": [
+      {
+        "description": "승인이력 일련번호",
+        "field": "aprvlCrerSqno",
+        "type": "String",
+        "example": "1234",
+        "hidden": "N"
+      },
+      {
+        "description": "구분",
+        "field": "chgDvClassbCd",
+        "type": "String",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "구분 명",
+        "field": "chgDvClassbNm",
+        "type": "String",
+        "example": "입회",
+        "hidden": "N"
+      },
+      {
+        "description": "브랜드 코드",
+        "field": "bdCd",
+        "type": "String",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "상품 코드",
+        "field": "subjCd",
+        "type": "String",
+        "example": "E",
+        "hidden": "N"
+      },
+      {
+        "description": "상품 명",
+        "field": "subjNm",
+        "type": "String",
+        "example": "눈높이영어",
+        "hidden": "N"
+      },
+      {
+        "description": "등록일(YYYYMMDD)",
+        "field": "rgstDt",
+        "type": "String",
+        "example": "20240909",
+        "hidden": "N"
+      },
+      {
+        "description": "등록자 ID",
+        "field": "firstRgtnId",
+        "type": "String",
+        "example": "1234",
+        "hidden": "N"
+      },
+      {
+        "description": "등록자 명",
+        "field": "firstRgtnNm",
+        "type": "String",
+        "example": "홍길동",
+        "hidden": "N"
+      },
+      {
+        "description": "관리 선생님 ID",
+        "field": "tchrEid",
+        "type": "String",
+        "example": "1234",
+        "hidden": "N"
+      },
+      {
+        "description": "관리 선생님 명",
+        "field": "tchrNm",
+        "type": "String",
+        "example": "홍길동",
+        "hidden": "N"
+      },
+      {
+        "description": "승인일(YYYYMMDD)",
+        "field": "dirtrAprvlDt",
+        "type": "String",
+        "example": "20240909",
+        "hidden": "N"
+      },
+      {
+        "description": "승인자 ID",
+        "field": "aprvlDirtrTchrEid",
+        "type": "String",
+        "example": "1234",
+        "hidden": "N"
+      },
+      {
+        "description": "승인자 명",
+        "field": "aprvlDirtrTchrNm",
+        "type": "String",
+        "example": "홍길동",
+        "hidden": "N"
+      },
+      {
+        "description": "승인 상태 코드",
+        "field": "aprvlStatCd",
+        "type": "String",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "승인 상태 코드 명",
+        "field": "aprvlStatNm",
+        "type": "String",
+        "example": "대기중",
+        "hidden": "N"
+      },
+      {
+        "description": "변동 구분 코드",
+        "field": "chgDvCd",
+        "type": "String",
+        "example": "AC",
+        "hidden": "N"
+      },
+      {
+        "description": "변동 구분 코드 명",
+        "field": "chgDvNm",
+        "type": "String",
+        "example": "입회취소",
+        "hidden": "N"
+      },
+      {
+        "description": "요일 코드",
+        "field": "dowCd",
+        "type": "String",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "요일 코드명",
+        "field": "dowNm",
+        "type": "String",
+        "example": "월요일",
+        "hidden": "N"
+      },
+      {
+        "description": "확인서 옵션",
+        "field": "opt",
+        "type": "String",
+        "example": "내방, 1:1",
+        "hidden": "N"
+      },
+      {
+        "description": "학습 시작일",
+        "field": "stdyStrDt",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "첫달 학습횟수, 변경후 학습 횟수, 퇴회 학습 횟수",
+        "field": "jnDoutCary",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "본부 명",
+        "field": "hofcNm",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "교육국 명",
+        "field": "beduNm",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "팀 CD",
+        "field": "teamCd",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "채널 명",
+        "field": "chNm",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "입회 사유",
+        "field": "jnRsnCd",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "입회 사유 코드 명",
+        "field": "jnRsnNm",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "소개 여부",
+        "field": "itrYn",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "소개 본부 명",
+        "field": "itrHofcNm",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "소개 교육국 명",
+        "field": "itrBeduNm",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "소개 팀 CD",
+        "field": "itrTeamCd",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "소개 채널 명",
+        "field": "itrChNm",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "소개 교사 id",
+        "field": "itrTchrEid",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "소개 교사 명",
+        "field": "itrTchrNm",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "입금 유형 코드",
+        "field": "dpstTypeCd",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "입금 유형 명",
+        "field": "dpstTypeNm",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "회비 납부 일",
+        "field": "finalMfeeDpstDt",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "변경 예정일",
+        "field": "chgPreargDt",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "변경전 상품명",
+        "field": "bchgSubjNm",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "이월금",
+        "field": "crdfwdAmt",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "미납금",
+        "field": "upayAmt",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "학습 종료일",
+        "field": "stdyEndDt",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "퇴회 책임 교사 id",
+        "field": "pfmcTchrEid",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "퇴회 책임 교사 명",
+        "field": "pfmcTchrNm",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "퇴회 실적 본부 명",
+        "field": "pfmcHofcNm",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "퇴회 실적 교육국 명",
+        "field": "pfmcBeduNm",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "퇴회 실적 팀 CD",
+        "field": "pfmcTeamCd",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "퇴회 실적 채널 명",
+        "field": "pfmcChNm",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "체납 공제 여부",
+        "field": "flpaDducApplYn",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "변경후 내용",
+        "field": "aftrChngNm",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "변경전 내용",
+        "field": "bfrChngNm",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "변경전 선생님 사번",
+        "field": "bchgTchrEid",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "변경전 선생님 이름",
+        "field": "bchgTchrNm",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      }
+    ],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_023"
+  },
+  {
+    "index": "024",
+    "url": "/mbr/v1/find/dtl/custadcrer",
+    "method": "POST",
+    "summary": "회원 상세 > 고객 상담 상세",
+    "description": "고객 상담 상세",
+    "responseType": "MbrCustAdDto",
+    "requestType": "MbrDtlReqDto",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "ADMIN > 회원 > 회원 정보 > 회원 상세 정보",
+    "requestData": [
+      {
+        "description": "회원 번호",
+        "field": "mbrNo",
+        "type": "String",
+        "example": "1234",
+        "hidden": "N"
+      },
+      {
+        "description": "승인이력 일련번호",
+        "field": "aprvlCrerSqno",
+        "type": "String",
+        "example": "111",
+        "hidden": "N"
+      },
+      {
+        "description": "브래드 코드",
+        "field": "bdCd",
+        "type": "String",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "상품 코드",
+        "field": "subjCd",
+        "type": "String",
+        "example": "K",
+        "hidden": "N"
+      },
+      {
+        "description": "수업 순번 번호",
+        "field": "tclsSeqNo",
+        "type": "String",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "상담 일자",
+        "field": "adDt",
+        "type": "String",
+        "example": "20240909",
+        "hidden": "N"
+      },
+      {
+        "description": "상담 번호",
+        "field": "adNo",
+        "type": "String",
+        "example": "21000",
+        "hidden": "N"
+      },
+      {
+        "description": "상담 순번 번호",
+        "field": "adSeqNo",
+        "type": "String",
+        "example": "1",
+        "hidden": "N"
+      }
+    ],
+    "responseData": [
+      {
+        "description": "상담 일자(YYYYMMDD)",
+        "field": "adDt",
+        "type": "String",
+        "example": "20240909",
+        "hidden": "N"
+      },
+      {
+        "description": "상담 번호",
+        "field": "adNo",
+        "type": "String",
+        "example": "123",
+        "hidden": "N"
+      },
+      {
+        "description": "상담 순번",
+        "field": "adSeqNo",
+        "type": "String",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "상담 요청일(YYYYMMDD)",
+        "field": "adRqsDt",
+        "type": "String",
+        "example": "20240909",
+        "hidden": "N"
+      },
+      {
+        "description": "상담 채널 구분 코드(SF100)",
+        "field": "adChDvCd",
+        "type": "String",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "상담 채널 구분 코드 명",
+        "field": "adChDvNm",
+        "type": "String",
+        "example": "전화상담",
+        "hidden": "N"
+      },
+      {
+        "description": "상담 구분 코드(N036)",
+        "field": "adDvCd",
+        "type": "String",
+        "example": "3",
+        "hidden": "N"
+      },
+      {
+        "description": "상담 구분 코드 명",
+        "field": "adDvNm",
+        "type": "String",
+        "example": "입회연계",
+        "hidden": "N"
+      },
+      {
+        "description": "상담 처리 상태 코드(SF260)",
+        "field": "prcsStatCd",
+        "type": "String",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "상담 처리 상태 코드 명",
+        "field": "prcsStatNm",
+        "type": "String",
+        "example": "상담대기",
+        "hidden": "N"
+      },
+      {
+        "description": "상담 교사 사원번호",
+        "field": "adTchrEid",
+        "type": "String",
+        "example": "1234",
+        "hidden": "N"
+      },
+      {
+        "description": "상담 교사 명",
+        "field": "adTchrNm",
+        "type": "String",
+        "example": "홍길동",
+        "hidden": "N"
+      },
+      {
+        "description": "상담 제목",
+        "field": "adTitle",
+        "type": "String",
+        "example": "상담 제목",
+        "hidden": "N"
+      },
+      {
+        "description": "상담 내용",
+        "field": "adDstm",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "답변 내용",
+        "field": "adRpyCntn",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "답변 일자",
+        "field": "adRpyDt",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "메모1",
+        "field": "adMemo1",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "메모2",
+        "field": "adMemo2",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "메모3",
+        "field": "adMemo3",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "메모4",
+        "field": "adMemo4",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "메모5",
+        "field": "adMemo5",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "메모 작성일1",
+        "field": "wrteDt1",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "메모 작성일2",
+        "field": "wrteDt2",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "메모 작성일3",
+        "field": "wrteDt3",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "메모 작성일4",
+        "field": "wrteDt4",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "메모 작성일5",
+        "field": "wrteDt5",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "상담 과목명",
+        "field": "adSubjNm",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "상담원명",
+        "field": "cnslId",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      },
+      {
+        "description": "접수일자",
+        "field": "accptDt",
+        "type": "String",
+        "example": "",
+        "hidden": "N"
+      }
+    ],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_024"
+  },
+  {
+    "index": "025",
+    "url": "/mbr/v1/find/upayaltk/list",
+    "method": "GET",
+    "summary": "장기 미납자 알림톡 발송 목록",
+    "description": "장기 미납자 알림톡 발송 목록",
+    "responseType": "AltkSndCrersDto",
+    "requestType": "",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "ADMIN > 회원 > 장기 미납 관리 > 장기 미납자 알림톡 발송",
+    "responseData": [
+      {
+        "description": "장기 미납자 알림톡 발송",
+        "field": "list",
+        "type": "List<AltkSndCrerDto>",
+        "example": "장기 미납자 알림톡 발송",
+        "hidden": "N",
+        "listData": [
+          {
+            "description": "알림톡발송 식별 번호",
+            "field": "altkSndIdfyNo",
+            "type": "String",
+            "example": "DROP20240909",
+            "hidden": "N"
+          },
+          {
+            "description": "대상 년원",
+            "field": "objtYm",
+            "type": "String",
+            "example": "202409",
+            "hidden": "N"
+          },
+          {
+            "description": "본부 코드",
+            "field": "hofcCd",
+            "type": "String",
+            "example": "AAA",
+            "hidden": "N"
+          },
+          {
+            "description": "본부 명",
+            "field": "hofcNm",
+            "type": "String",
+            "example": "대교 본무",
+            "hidden": "N"
+          },
+          {
+            "description": "교육국 코드",
+            "field": "beduCd",
+            "type": "String",
+            "example": "BBB",
+            "hidden": "N"
+          },
+          {
+            "description": "교육국 명",
+            "field": "beduNm",
+            "type": "String",
+            "example": "대교 교육국",
+            "hidden": "N"
+          },
+          {
+            "description": "회원 번호",
+            "field": "mbrNo",
+            "type": "String",
+            "example": "1234",
+            "hidden": "N"
+          },
+          {
+            "description": "회원 명",
+            "field": "mbrNm",
+            "type": "String",
+            "example": "홍길동",
+            "hidden": "N"
+          },
+          {
+            "description": "회원 학년 코드",
+            "field": "grdeCd",
+            "type": "String",
+            "example": "1",
+            "hidden": "N"
+          },
+          {
+            "description": "회원 학년 코드 명",
+            "field": "grdeNm",
+            "type": "String",
+            "example": "초등1",
+            "hidden": "N"
+          },
+          {
+            "description": "미납 개월 수",
+            "field": "upayNbom",
+            "type": "String",
+            "example": "1",
+            "hidden": "N"
+          },
+          {
+            "description": "발송 여부",
+            "field": "sndYn",
+            "type": "String",
+            "example": "Y",
+            "hidden": "N"
+          },
+          {
+            "description": "발송 일자",
+            "field": "altkSndDt",
+            "type": "String",
+            "example": "20240909",
+            "hidden": "N"
+          },
+          {
+            "description": "보호자 전화번호",
+            "field": "psvHp",
+            "type": "String",
+            "example": "01022223333",
+            "hidden": "N"
+          },
+          {
+            "description": "관게 구분 코드",
+            "field": "relsDvCd",
+            "type": "String",
+            "example": "1",
+            "hidden": "N"
+          },
+          {
+            "description": "관게 구분 명",
+            "field": "relsDvNm",
+            "type": "String",
+            "example": "모",
+            "hidden": "N"
+          }
+        ]
+      }
+    ],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_025"
+  },
+  {
+    "index": "026",
+    "url": "/mbr/v1/find/upayaltk/lastsndym",
+    "method": "GET",
+    "summary": "장기 미납자 알림톡 발송 최신 전송 년월 조회",
+    "description": "장기 미납자 알림톡 발송 최신 전송 년월 조회",
+    "responseType": "Map<String, String>",
+    "requestType": "",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "ADMIN > 회원 > 장기 미납 관리 > 장기 미납자 알림톡 발송",
+    "responseData": [],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_026"
+  },
+  {
+    "index": "027",
+    "url": "/mbr/v1/find/upayaltk/dosnd",
+    "method": "POST",
+    "summary": "장기 미납자 알림톡 발송 실행",
+    "description": "장기 미납자 알림톡 발송 실행",
+    "responseType": "Map<String, String>",
+    "requestType": "Map<String,",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "",
+    "requestData": [],
+    "responseData": [],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_027"
+  },
+  {
+    "index": "028",
+    "url": "/mbr/v2/find/upayaltk/dosnd",
+    "method": "POST",
+    "summary": "장기 미납자 알림톡 발송 실행 v2",
+    "description": "장기 미납자 알림톡 발송 실행 v2",
+    "responseType": "Map<String, String>",
+    "requestType": "Map<String,",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "ADMIN > 회원 > 장기 미납 관리 > 장기 미납자 알림톡 발송",
+    "requestData": [],
+    "responseData": [],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_028"
+  },
+  {
+    "index": "029",
+    "url": "/mbr/v1/find/atmtcdout/list",
+    "method": "GET",
+    "summary": "장기 미납자 자동 퇴회 목록",
+    "description": "장기 미납자 자동 퇴회 목록",
+    "responseType": "LtemUpayAtmtcDoutsDto",
+    "requestType": "",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "ADMIN > 회원 > 장기 미납 관리 > 장기 미납자 자동 퇴회",
+    "responseData": [
+      {
+        "description": "데이터 행 번호",
+        "field": "rowNum",
+        "type": "int",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "데이터 전체 건수",
+        "field": "totalCnt",
+        "type": "int",
+        "example": "99",
+        "hidden": "N"
+      },
+      {
+        "description": "현재 페이지",
+        "field": "currentPage",
+        "type": "int",
+        "example": "1",
+        "hidden": "N"
+      },
+      {
+        "description": "페이지에 보여질 목록 건수",
+        "field": "pageSize",
+        "type": "int",
+        "example": "10",
+        "hidden": "N"
+      },
+      {
+        "description": "전체 페이지 수",
+        "field": "pageCount",
+        "type": "int",
+        "example": "12",
+        "hidden": "N"
+      },
+      {
+        "description": "장기 미납자 자동 퇴회 목록",
+        "field": "list",
+        "type": "List<LtemUpayAtmtcDoutDto>",
+        "example": "장기 미납자 자동 퇴회 목록",
+        "hidden": "N",
+        "listData": [
+          {
+            "description": "회원 번호",
+            "field": "mbrNo",
+            "type": "String",
+            "example": "1234",
+            "hidden": "N"
+          },
+          {
+            "description": "회원 명",
+            "field": "mbrNm",
+            "type": "String",
+            "example": "홍길동",
+            "hidden": "N"
+          },
+          {
+            "description": "수업 순번",
+            "field": "tclsSeqNo",
+            "type": "String",
+            "example": "1",
+            "hidden": "N"
+          },
+          {
+            "description": "학습 상태 코드",
+            "field": "stdyStatCd",
+            "type": "String",
+            "example": "1",
+            "hidden": "N"
+          },
+          {
+            "description": "본부 코드",
+            "field": "hofcCd",
+            "type": "String",
+            "example": "P063",
+            "hidden": "N"
+          },
+          {
+            "description": "본부 명",
+            "field": "hofcNm",
+            "type": "String",
+            "example": "대교 본부",
+            "hidden": "N"
+          },
+          {
+            "description": "교육국 코드",
+            "field": "beduCd",
+            "type": "String",
+            "example": "11",
+            "hidden": "N"
+          },
+          {
+            "description": "교육국 명",
+            "field": "beduNm",
+            "type": "String",
+            "example": "대교 교육국",
+            "hidden": "N"
+          },
+          {
+            "description": "팀코드",
+            "field": "teamCd",
+            "type": "String",
+            "example": "01",
+            "hidden": "N"
+          },
+          {
+            "description": "교사 사원번호",
+            "field": "tchrEid",
+            "type": "String",
+            "example": "12345",
+            "hidden": "N"
+          },
+          {
+            "description": "교사 명",
+            "field": "tchrNm",
+            "type": "String",
+            "example": "홍길동",
+            "hidden": "N"
+          },
+          {
+            "description": "브랜드 코드",
+            "field": "bdCd",
+            "type": "String",
+            "example": "1",
+            "hidden": "N"
+          },
+          {
+            "description": "상품 코드",
+            "field": "subjCd",
+            "type": "String",
+            "example": "K",
+            "hidden": "N"
+          },
+          {
+            "description": "상품 명",
+            "field": "subjNm",
+            "type": "String",
+            "example": "수학1",
+            "hidden": "N"
+          },
+          {
+            "description": "모과목 명",
+            "field": "prtSubjNm",
+            "type": "String",
+            "example": "수학",
+            "hidden": "N"
+          },
+          {
+            "description": "미납 개월 수",
+            "field": "upayNbom",
+            "type": "String",
+            "example": "3",
+            "hidden": "N"
+          },
+          {
+            "description": "최종 회비 년월",
+            "field": "finalMfeeFpayYm",
+            "type": "String",
+            "example": "202409",
+            "hidden": "N"
+          },
+          {
+            "description": "최종 회비 납부 일자",
+            "field": "finalMfeeDpstDt",
+            "type": "String",
+            "example": "20240909",
+            "hidden": "N"
+          },
+          {
+            "description": "미납금",
+            "field": "upayAmt",
+            "type": "String",
+            "example": "30000",
+            "hidden": "N"
+          },
+          {
+            "description": "성공 여부",
+            "field": "sucsYn",
+            "type": "String",
+            "example": "N",
+            "hidden": "N"
+          },
+          {
+            "description": "퇴회 일자",
+            "field": "doutDt",
+            "type": "String",
+            "example": "20240909",
+            "hidden": "N"
+          }
+        ]
+      }
+    ],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_029"
+  },
+  {
+    "index": "030",
+    "url": "/mbr/v1/find/atmtcdout/lastdoutym",
+    "method": "GET",
+    "summary": "장기 미납자 자동퇴회 최종 년월 조회",
+    "description": "장기 미납자 자동퇴회 최종 년월 조회",
+    "responseType": "Map<String, String>",
+    "requestType": "",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "ADMIN > 회원 > 장기 미납 관리 > 장기 미납자 자동 퇴회",
+    "responseData": [],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_030"
+  },
+  {
+    "index": "031",
+    "url": "/mbr/v1/find/atmtcdout/candrgst",
+    "method": "POST",
+    "summary": "장기 미납 자동 퇴회 대상자 등록",
+    "description": "장기 미납 자동 퇴회 대상자 등록",
+    "responseType": "Map<String, String>",
+    "requestType": "Map<String,",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "ADMIN > 회원 > 장기 미납 관리 > 장기 미납자 자동 퇴회",
+    "requestData": [],
+    "responseData": [],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_031"
+  },
+  {
+    "index": "032",
+    "url": "/mbr/v1/home/mbr",
+    "method": "GET",
+    "summary": "장기 미납 자동 퇴회 대상자 등록",
+    "description": "장기 미납 자동 퇴회 대상자 등록",
+    "responseType": "HomeMbrResDto",
+    "requestType": "",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "ADMIN > 홈",
+    "responseData": [
+      {
+        "description": "학습중 회원수",
+        "field": "mbrStdyCnt",
+        "type": "int",
+        "example": "0",
+        "hidden": "N"
+      },
+      {
+        "description": "비학습중 회원수",
+        "field": "mbrNoneStdyCnt",
+        "type": "int",
+        "example": "0",
+        "hidden": "N"
+      },
+      {
+        "description": "체험 회원수",
+        "field": "mbrExperCnt",
+        "type": "int",
+        "example": "0",
+        "hidden": "N"
+      },
+      {
+        "description": "입회 회원수",
+        "field": "mbrJnCnt",
+        "type": "int",
+        "example": "0",
+        "hidden": "N"
+      },
+      {
+        "description": "장기미납자 2개월 회원수",
+        "field": "mbrNonePay2Cnt",
+        "type": "int",
+        "example": "0",
+        "hidden": "N"
+      },
+      {
+        "description": "장기미납자 3개월 회원수",
+        "field": "mbrNonePay3Cnt",
+        "type": "int",
+        "example": "0",
+        "hidden": "N"
+      }
+    ],
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_032"
+  },
+  {
+    "index": "033",
+    "url": "/test",
+    "method": "GET",
+    "summary": "TEST",
+    "description": "",
+    "responseType": "",
+    "requestType": "",
+    "requestPathData": [],
+    "requestParamData": [],
+    "menuData": "",
+    "sourceSystemName": "Dreams Admin",
+    "targetSystemName": "ndrs-admin-mbr",
+    "interfaceId": "NDRS_ADMIN_MBR_033"
+  }
+]

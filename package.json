@@ -1,0 +1,20 @@
+{
+  "name": "java-doc-generator",
+  "version": "1.0.0",
+  "description": "Convert @Schema annotations to Javadoc comments in Java DTO files.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.26.10",
+    "@babel/traverse": "^7.26.10",
+    "exceljs": "^4.4.0",
+    "fs": "0.0.1-security",
+    "fs-extra": "^11.3.0",
+    "moment": "^2.30.1",
+    "path": "^0.12.7",
+    "swagger-parser": "^10.0.3"
+  },
+  "devDependencies": {}
+}
