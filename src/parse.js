@@ -1,76 +1,56 @@
 const fs = require("fs");
-// const path = require("path");
 const config = require("../config.json");
 const {findJavaFilesRecursive, readFileJson} = require("./utils");
+
+
+// 소스 경로
 const INPUT_DIR =  config.inputDirectory;
 
-// Controller API 데이터 추출을 위한 정규식
-const API_ALL_REGEX = /@(PostMapping|GetMapping|PutMapping|DeleteMapping)\(["'](.*?)["']\)/g;
-// const PARENT_PATH_REGEX = /@RequestMapping\s*\(\s*(?:path\s*=\s*)?"(.*?)"\s*\)/g;
+// 메뉴 정보 Json
+const menuJson = readFileJson('MENU');
+// pageDto Json  (pageDto는 Core 파일이라 직접 명시)
+const pageDtoJson = readFileJson('PAGE_DTO');
+
+
+// ============================================= 정규식 SATRT =================================================
+
+// API 상위 URL (@RequestMapping)
 const PARENT_PATH_REGEX = /@RequestMapping\s*\(\s*(?:value\s*=\s*)?\s*"([^"]+)"\s*\)/;
 
+// API method
 const METHOD_REGEX = /@(Get|Post|Put|Delete)Mapping/;
+// API 인터페이스 명 (@Operation(summary))
 const SUMMARY_REGEX = /@Operation\s*\([^)]*summary\s*=\s*"([^"]*)"/;
+// API 인터페이스 개요 (@Operation(description))
 const DESCRIPTIN_REGEX = /@Operation\s*\([^)]*description\s*=\s*"([^"]*)"/;
 
-const PARAM_REGEX = /@Parameter\s*\(\s*(?:name\s*=\s*"([^"]*)",\s*)?description\s*=\s*"([^"]*)"(?:,\s*example\s*=\s*"([^"]*)")?(?:,\s*required\s*=\s*(true|false))?\s*\)\s*(?:@PathVariable\s*)?([\w<>]+)\s+(\w+)/g;
-// const REQUEST_PARAM_REGEX = /@Parameter\s*\(\s*description\s*=\s*"([^"]*)"(?:,\s*example\s*=\s*"([^"]*)")?\)\s*\n?\s*@RequestParam\s*\(\s*(?:name\s*=\s*|value\s*=\s*)?"?([^"]*)"?[^)]*\)\s*(\w+)\s+(\w+)/gs;
-const REQUEST_PARAM_REGEX = /@Parameter\s*\(\s*description\s*=\s*"([^"]*)"(?:,\s*example\s*=\s*"([^"]*)")?\)\s*\n?\s*@RequestParam(?:\s*\(\s*(?:name\s*=\s*|value\s*=\s*)?"?([^"]*)"?[^)]*\))?\s*(\w+)\s+(\w+)/gs;
-
-// const RESPONSE_TYPE_REGEX = /public\s+DrsResponseEntity<([^>]+(?:<[^>]+>)?)>/;
+// API Response Type (DrsResponseEntity<?>)
 const RESPONSE_TYPE_REGEX = /public\s+DrsResponseEntity<(.*?)>\s+/;
-// const REQUEST_TYPE_REGEX = /@RequestBody\s+(?:@Valid\s+)?(\S+)/;
-const REQUEST_TYPE_REGEX = /@RequestBody\s*\(?\)?\s+(?:@Valid\s+)?(\S+)/;
 
-
-
+// API Request RequestBody Type (@RequestBody )
+const REQUEST_BODY_TYPE_REGEX = /@RequestBody\s*\(?\)?\s+(?:@Valid\s+)?(\S+)/;
+// API Request ModelAttribute Type (@ModelAttribute )
 const REQUEST_MDELATTRIBUTE_TYPE_REGEX = /@ModelAttribute\s+(.*?)\s+/;
+
+// API Request Path 파라미터 (@Parameter(...) @PathVariable(...))
+const PARAM_REGEX = /@Parameter\s*\(\s*(?:name\s*=\s*"([^"]*)",\s*)?description\s*=\s*"([^"]*)"(?:,\s*example\s*=\s*"([^"]*)")?(?:,\s*required\s*=\s*(true|false))?\s*\)\s*(?:@PathVariable\s*)?([\w<>]+)\s+(\w+)/g;
+// API Request Query 파라미터 (@Parameter(...) @RequestParam(...))
+const REQUEST_PARAM_REGEX = /@Parameter\s*\(\s*description\s*=\s*"([^"]*)"(?:,\s*example\s*=\s*"([^"]*)")?\)\s*\n?\s*@RequestParam(?:\s*\(\s*(?:name\s*=\s*|value\s*=\s*)?"?([^"]*)"?[^)]*\))?\s*(\w+)\s+(\w+)/gs;
 
 
 // DTO 데이터 추출을 위한 정규식
-// const DTO_FIELD_REGEX = /@Schema\s*\(\s*description\s*=\s*"([^"]*)"(?:,\s*example\s*=\s*"([^"]*)")?(?:,\s*hidden\s*=\s*(true|false))?\s*\)(?:\s*@\w+\([^)]*\))*\s*(?:private\s+)?([\w<>]+)\s+(\w+);/g;
-const DTO_FIELD_REGEX = /@Schema\s*\(\s*description\s*=\s*"([^"]*)"(?:,\s*example\s*=\s*"([^"]*)")?(?:,\s*hidden\s*=\s*(true|false))?\s*\)\s*(?:@\w+\([^)]*\)\s*)*\s*(?:private|protected|public)\s+([\w<>]+)\s+(\w+)(?:\s*=\s*[^;]+)?;/g;
+// const DTO_FIELD_REGEX = /@Schema\s*\(\s*description\s*=\s*"([^"]*)"(?:,\s*example\s*=\s*"([^"]*)")?(?:,\s*hidden\s*=\s*(true|false))?\s*\)\s*(?:@\w+\([^)]*\)\s*)*\s*(?:private|protected|public)\s+([\w<>]+)\s+(\w+)(?:\s*=\s*[^;]+)?;/g;
 
-//메뉴 정보
-const menuJson = readFileJson('MENU');
+// ============================================= 정규식 END =================================================
 
-const checkAnnotation = (line) => {
+
+
+// API method 가져오기
+const getApiMethod = (line) => {
     const match = line.match(METHOD_REGEX);
     return match ? match[1] : null;  // Get, Post, Put, Delete 중 매칭된 값 반환
 };
 
-//pageDto는 Core 파일이라 직접 명시 
-const pageData = [{
-        description: '데이터 행 번호', 
-        field: 'rowNum', 
-        type: 'int', 
-        example: '1',
-        hidden:  'N'
-    },{
-        description: '데이터 전체 건수', 
-        field: 'totalCnt', 
-        type: 'int', 
-        example: '99',
-        hidden:  'N'
-    },{
-        description: '현재 페이지', 
-        field: 'currentPage', 
-        type: 'int', 
-        example: '1',
-        hidden:  'N'
-    },{
-        description: '페이지에 보여질 목록 건수', 
-        field: 'pageSize', 
-        type: 'int', 
-        example: '10',
-        hidden:  'N'
-    },{
-        description: '전체 페이지 수', 
-        field: 'pageCount', 
-        type: 'int', 
-        example: '12',
-        hidden:  'N'
-}];
 
 const getPathVariableFields =(url)=> {
     try {
@@ -97,7 +77,7 @@ const extractApiParams=(javaCode)=> {
 
     // 2️⃣ @RequestParam이 있는 경우만 데이터로 변환
     while ((match = REQUEST_PARAM_REGEX.exec(javaCode)) !== null) {
-        const [, field, type, variable] = match;
+        const [, field, type] = match;
 
         // @Parameter에 있는 경우 추가, 없으면 기본값 사용
         if (paramMap[field]) {
@@ -121,11 +101,11 @@ const extractApiParams=(javaCode)=> {
 
 const matchJavaBlock =(match, url, index)=>{
     const methodBlock = match[0];
-    const method = checkAnnotation(methodBlock)
+    const method = getApiMethod(methodBlock)
     const summaryMatch = SUMMARY_REGEX.exec(methodBlock);
     const descriptionMatch = DESCRIPTIN_REGEX.exec(methodBlock);
     const responseTypeMatch = RESPONSE_TYPE_REGEX.exec(methodBlock);
-    const requestTypeMatch = REQUEST_TYPE_REGEX.exec(methodBlock);
+    const requestTypeMatch = REQUEST_BODY_TYPE_REGEX.exec(methodBlock);
     const requestModelTypeMatch = REQUEST_MDELATTRIBUTE_TYPE_REGEX.exec(methodBlock);
     const requestPathData = [];
     let menuData = '';
@@ -202,8 +182,6 @@ const matchJavaBlock =(match, url, index)=>{
         }
     }
     
-
-
     return {
         index: index, 
         url: url,
@@ -218,6 +196,7 @@ const matchJavaBlock =(match, url, index)=>{
     }
 }
 
+// API URl 가져오기
 const extractUrls = (content) => {
     // 정규식 패턴
     const regex = /@(?:Get|Post|Put|Delete)Mapping\s*\(\s*(?:value\s*=\s*)?\{?\s*((?:"[^"]*"\s*,?\s*)+)\s*\}?\s*\)?/g;
@@ -237,7 +216,6 @@ const extractUrls = (content) => {
         }
     }
     return urls;
-
 };
 
 
@@ -252,12 +230,7 @@ const parseJavaControllerApiList = (filePath) => {
     const resultData = [];
     const content = fs.readFileSync(filePath, 'utf8');
 
-    // const apiRegex = /(?:^\s*@Operation\([^)]*\)\n)?^\s*(@(?:Get|Post|Put|Delete)Mapping[^\n]*\n(?:[\s\S]*?))(?=^\s*@(?:Get|Post|Put|Delete)Mapping|\s*}\s*$|\Z)/gm;
-    // const apiRegex = /(?:^\s*@Operation\([\s\S]*?\)\n)?^\s*(@(?:Get|Post|Put|Delete)Mapping[^\n]*\n(?:[\s\S]*?))(?=^\s*@(?:Get|Post|Put|Delete)Mapping|\s*}\s*$|\Z)/gm;
-    // const apiRegex = /(?:^\s*(?:\/\*\*[\s\S]*?\*\/)\s*\n)?(?:^\s*@Operation\([\s\S]*?\)\s*\n)?^\s*(@(?:Get|Post|Put|Delete)Mapping[^\n]*\n(?:[\s\S]*?))(?=^\s*@(?:Get|Post|Put|Delete)Mapping|\s*}\s*$|\Z)/gm;
-    // const apiRegex = /(?:^\s*(?:\/\*\*[\s\S]*?\*\/)\s*\n)?(?:^\s*@Operation\([\s\S]*?\)\s*\n)?^\s*(@(?:Get|Post|Put|Delete)Mapping[^\n]*\n(?:[\s\S]*?))(?=^\s*@(?:Get|Post|Put|Delete)Mapping|^\s*\/\*\*|\s*}\s*$|\Z)/gm;
     const apiRegex = /(?:^\s*(?:\/\*\*[\s\S]*?\*\/)\s*\n)?(?:^\s*@Operation\([\s\S]*?\)\s*\n)?(?:^\s*\/\*\*[\s\S]*?\*\/\s*\n)?^\s*(@(?:Get|Post|Put|Delete)Mapping[^\n]*\n(?:[\s\S]*?))(?=^\s*(?:@(?:Get|Post|Put|Delete)Mapping|\/\*\*|\s*}\s*$|\Z))/gm;
-
 
     const matches = [...extractAfterClassDeclaration(content).matchAll(apiRegex)];
 
@@ -267,8 +240,8 @@ const parseJavaControllerApiList = (filePath) => {
     matches.forEach((match, index) => {
         if (match) {
             // console.log('================================================================')
-            // console.log(index, match[0])
-            // const url = match[2];
+            // console.log(index,  match[2], match[0]); // index, url, block
+
             let url = '';
             const matchUrl = extractUrls(match[0]); // Url 가져오기
             if(matchUrl && matchUrl.length > 0){
@@ -284,30 +257,6 @@ const parseJavaControllerApiList = (filePath) => {
 
 
 
-// 특정 URL에 해당하는 API 정보를 추출
-const parseJavaController = (filePath, url) => {
-    const content = fs.readFileSync(filePath, 'utf8');
-
-    const apiRegex = new RegExp(`@(PostMapping|GetMapping|PutMapping|DeleteMapping)\\(\\s*\\"${url}\\"\\s*\\)[^\\n]*(?:\\n.*){0,10}`, "g");
-    // const apiRegex = new RegExp(`@(PostMapping|GetMapping|PutMapping|DeleteMapping)\\(\\s*\\"${url}\\"\\s*\\)[\\s\\S]*?public\\s+DrsResponseEntity<.*?>\\s+\\w+\\s*\\([^)]*\\)\\s*\\{`,'g');
-    
-    const match = apiRegex.exec(content);
-    if (match) {
-        const parentPath = PARENT_PATH_REGEX.exec(content);
-
-        // API 순서 (인터페이스 ID를 위한 값 )
-        const apiList = [];
-        let matchAll;
-        while ((matchAll = API_ALL_REGEX.exec(content)) !== null) {
-            apiList.push(matchAll[2]); 
-        }
-        const index = apiList.indexOf(url) + 1;
-        
-        return matchJavaBlock(match, parentPath[1] + url, index);
-    }
-    return null;
-};
-
 
 
 const parseJavaDto = (filePath, inExtends = true) => {
@@ -317,7 +266,7 @@ const parseJavaDto = (filePath, inExtends = true) => {
         const content = fs.readFileSync(filePath, 'utf8');
 
         if(/extends\s+PageDto/.test(content)){
-            extractedData.push(...pageData);
+            extractedData.push(...pageDtoJson);
         };
 
         if(inExtends){
@@ -404,4 +353,4 @@ function parseDTO(dtoText) {
     return fields;
   }
 
-module.exports = {parseJavaControllerApiList, parseJavaController, parseJavaDto};
+module.exports = {parseJavaControllerApiList, parseJavaDto};

@@ -1,10 +1,9 @@
 const path = require("path");
 const config = require("../config.json");
-const {findJavaFilesRecursive, findFileInControllers, findJavaFilesRecursiveAll, writerFileJson, readFileJson } = require("./utils");
-const {parseJavaControllerApiList, parseJavaController, parseJavaDto } = require("./parse");
+const {findJavaFilesRecursive, findJavaFilesRecursiveAll, writerFileJson, readFileJson } = require("./utils");
+const {parseJavaControllerApiList, parseJavaDto } = require("./parse");
 
 const INPUT_DIR =  config.inputDirectory;
-// const TARGET_API =  config.targetApi;
 const TARGET_FILE = config.targetFile;
 const BASIC_TYPES = ["String", "Integer", "Long", "Double", "Float", "Boolean", "Character", "Byte", "Short"];
 
@@ -36,6 +35,14 @@ function getSystemName(text, targets){
     return matches ? matches[0] : '';
 }
 
+
+function setSystemName(data){
+    if(data){
+        data.sourceSystemName = sourceSystemName;
+        data.targetSystemName = targetSystemName;
+    }
+}
+
 function findSystemCategory(text) {
     const foundCategories = [];
 
@@ -47,14 +54,6 @@ function findSystemCategory(text) {
 
     return foundCategories.length > 0 ? foundCategories[0] : ["Dreams"];
 }
-
-function setSystemName(data){
-    if(data){
-        data.sourceSystemName = sourceSystemName;
-        data.targetSystemName = targetSystemName;
-    }
-}
-
 
 
 function getDtoData (dtoType, isRequest=false){
@@ -115,36 +114,9 @@ function getDtoData (dtoType, isRequest=false){
             })
         }
     }
-    // console.log('dtodata', dtoData)
     return dtoData;
 }
 
-function processJavaFile() {
-//     let resultData = null;
-//     const javaFiles = findJavaFilesRecursive(INPUT_DIR, [], 'Controller', false, TARGET_API); 
-//     console.log('javaFiles :: ', javaFiles)
-
-//     javaFiles.forEach(file => {
-//         let data = parseJavaController(file, TARGET_API);
-//         if(data){
-//             if(data.requestType){
-//                 data.requestData = getDtoData(data.requestType, true);
-//             }
-
-//             if(data.responseType){
-//                 data.responseData = getDtoData(data.responseType);
-//             }
-
-//             const result = findFileInControllers(INPUT_DIR, path.basename(file));
-//             if (result) {
-//                 data.interfaceId = interfaceIdPre + String(result.folderIndex).padStart(2, '0') + String(result.fileIndex).padStart(2, '0') + String(data.index).padStart(2, '0');
-//                 // console.log(`📂 몇 번째 Controller 폴더: ${result.folderIndex}`, `📄 폴더 안에서 몇 번째 파일: ${result.fileIndex}`, `📁 파일 위치: ${result.folderPath}`);
-//             }
-//         }
-//         resultData = data;
-//     });
-//     return resultData;
-}
 
 
 function processJavaFiles() {
@@ -156,7 +128,7 @@ function processJavaFiles() {
         let apiList = parseJavaControllerApiList(file);
         if(apiList){
             apiList.forEach(data=>{
-                console.log("------------------------------------------------" + data.url + "------------------------------------------------")
+                // console.log("------------------------------------------------" + data.url + "------------------------------------------------")
                 if(data.requestType){
                     data.requestData = getDtoData(data.requestType, true);
                 }
@@ -226,4 +198,4 @@ function processJavaFilesAll() {
 }
 
 
-module.exports = { processJavaFile, processJavaFiles, processJavaFilesAll };
+module.exports = { processJavaFiles, processJavaFilesAll };

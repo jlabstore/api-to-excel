@@ -1,7 +1,6 @@
 
 const ExcelJS = require("exceljs");
 const fs = require("fs-extra");
-const path = require("path");
 const moment = require("moment");
 const config = require("../config.json");
 
@@ -300,24 +299,23 @@ async function updateExcelTemplateList(apiList) {
     console.log(`✅ 엑셀 업데이트 완료: ${outputPath}`);
 }
 
-// 🔹 기존 엑셀 파일을 로드하고 데이터 채우기
-async function updateExcelTemplate(data) {
-    if (!fs.existsSync(templatePath)) {
-        console.error("❌ 템플릿 파일이 존재하지 않습니다:", templatePath);
-        return;
-    }
-    const workbook = new ExcelJS.Workbook();
-    await workbook.xlsx.readFile(templatePath);
-    const sheet = workbook.getWorksheet(TEMPLATE_SEET_NO); 
+// // 🔹 기존 엑셀 파일을 로드하고 데이터 채우기
+// async function updateExcelTemplate(data) {
+//     if (!fs.existsSync(templatePath)) {
+//         console.error("❌ 템플릿 파일이 존재하지 않습니다:", templatePath);
+//         return;
+//     }
+//     const workbook = new ExcelJS.Workbook();
+//     await workbook.xlsx.readFile(templatePath);
+//     const sheet = workbook.getWorksheet(TEMPLATE_SEET_NO); 
 
-    drawCellData(sheet, data);
+//     drawCellData(sheet, data);
     
-    // 🔹 파일 저장
-    await workbook.xlsx.writeFile(outputPath);
-    console.log(`✅ 엑셀 업데이트 완료: ${outputPath}`);
-}
+//     // 🔹 파일 저장
+//     await workbook.xlsx.writeFile(outputPath);
+// }
 
-module.exports = { updateExcelTemplate , updateExcelTemplateList};
+module.exports = { updateExcelTemplateList};
 
 
 

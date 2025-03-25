@@ -1,13 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const config = require("../config.json");
 
-// 특정 디렉토리 내에서 *.java 파일 찾기
-function findJavaFiles(dir) {
-    return fs.readdirSync(dir)
-        .filter(file => file.endsWith("Dto.java"))
-        .map(file => path.join(dir, file));
-}
 
 // 파일 읽기
 function readFile(filePath) {
@@ -127,4 +120,4 @@ function findFileInControllers(rootDir, targetFile) {
     return searchControllers(rootDir);
 }
 
-module.exports = { findJavaFiles, readFile, writeFile, checkApiInFile, findJavaFilesRecursive, findFileInControllers, findJavaFilesRecursiveAll, writerFileJson, readFileJson};
+module.exports = { readFile, writeFile, checkApiInFile, findJavaFilesRecursive, findFileInControllers, findJavaFilesRecursiveAll, writerFileJson, readFileJson};

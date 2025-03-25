@@ -1,11 +1,11 @@
 {
-  "inputDirectory": "/Users/eunhachoi/data/workspace/ndrs/ndrs-study/src/main/java/com/daekyo/dreams",
+  "inputDirectory": "/Users/eunhachoi/data/workspace/ndrs/ndrs-common/src/main/java/com/daekyo/dreams",
   "excelTemplate": "API_Interface_Sample2.xlsx",
   "excelOutput": "API_Interface_Output.xlsx",
   "writer": "최은하",
-  "responseCdType": "STDY",
+  "responseCdType": "CMM",
   "_comment" : "targetType : ALL or FILE",
   "targetType": "FILE", 
-  "targetFile": "ClsrGrpController"
+  "targetFile": "UserController"
 }
 

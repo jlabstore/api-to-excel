@@ -1,11 +1,10 @@
-const { processJavaFile, processJavaFiles, processJavaFilesAll } = require("./src/processFiles");
-const { updateExcelTemplate, updateExcelTemplateList } = require("./src/excelWriter");
+const { processJavaFiles, processJavaFilesAll } = require("./src/processFiles");
+const { updateExcelTemplateList } = require("./src/excelWriter");
 const config = require("./config.json");
 
 const targetType = config.targetType;
 
 function main() {
-
     if(targetType === 'ALL'){
         // Java 파일 처리 실행
         const apiList = processJavaFilesAll();
@@ -23,15 +22,6 @@ function main() {
             updateExcelTemplateList(apiList)
         }
     }
-    // else{
-    //     // Java 파일 처리 실행
-    //     const data = processJavaFile();
-    //     console.log("API :: ", data)
-    //     if(data){
-    //         // 엑셀 추출
-    //         updateExcelTemplate(data)
-    //     }
-    // }
 }
 
 main();
