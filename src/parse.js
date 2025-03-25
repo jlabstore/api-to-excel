@@ -48,7 +48,7 @@ const REQUEST_PARAM_REGEX = /@Parameter\s*\(\s*description\s*=\s*"([^"]*)"(?:,\s
 // API method 가져오기
 const getApiMethod = (line) => {
     const match = line.match(METHOD_REGEX);
-    return match ? match[1] : null;  // Get, Post, Put, Delete 중 매칭된 값 반환
+    return match && match[1] ? match[1].toUpperCase() : null;  // Get, Post, Put, Delete 중 매칭된 값 반환
 };
 
 
@@ -64,7 +64,7 @@ const getPathVariableFields =(url)=> {
 
 const extractApiParams=(javaCode)=> {
     const PARAMETER_REGEX = /@Parameter\s*\(\s*name\s*=\s*"([^"]*)",\s*description\s*=\s*"([^"]*)".*?\)/g;
-    const REQUEST_PARAM_REGEX = /(?:@Valid\s+)?@RequestParam\s*\(\s*(?:value\s*=\s*)?"([^"]*)".*?\)\s*(\w+)\s+(\w+)/g;
+    const REQUEST_PARAM_REGEX = /(?:@Valid\s+)?(?:@RequestParam(?:\([^)]*\))?\s*(?:@Parameter\([^)]*\))?\s*(\w+)\s+(\w+)|@RequestParam\s*\(\s*(?:value\s*=\s*)?"([^"]*)".*?\)\s*(\w+)\s+(\w+))/g;
 
     let parameters = [];
     let paramMap = {};
@@ -77,7 +77,7 @@ const extractApiParams=(javaCode)=> {
 
     // 2️⃣ @RequestParam이 있는 경우만 데이터로 변환
     while ((match = REQUEST_PARAM_REGEX.exec(javaCode)) !== null) {
-        const [, field, type] = match;
+        const [, type , field] = match;
 
         // @Parameter에 있는 경우 추가, 없으면 기본값 사용
         if (paramMap[field]) {
@@ -112,7 +112,7 @@ const matchJavaBlock =(match, url, index)=>{
 
     try {
         if(menuJson){
-            const items= menuJson.filter(item => item.api_uri === url && item.api_mthd.toUpperCase() === method.toUpperCase() )
+            const items= menuJson.filter(item => item.api_uri === url && item.api_mthd.toUpperCase() === method )
             if(items && items.length > 0 ){
                 menuData = items.map(item => item.array_to_string).join(', ');
             }else{
@@ -175,17 +175,22 @@ const matchJavaBlock =(match, url, index)=>{
           hidden: "N"
         });
     }
-    if(requestParamData.length == 0){
-        const paramData =  extractApiParams(methodBlock);
-        if(paramData && paramData.length > 0){
-            requestParamData = paramData;
-        }
+    const paramData =  extractApiParams(methodBlock);
+    if(paramData && paramData.length > 0){
+        const requestParamFields = new Set(requestParamData.map(d => d.field));
+        paramData.forEach(data => {
+            if (!requestParamFields.has(data.field)) {
+                requestParamData.push(data);
+                requestParamFields.add(data.field); 
+            }
+        });
+        // requestParamData = paramData;
     }
     
     return {
         index: index, 
         url: url,
-        method: method.toUpperCase(),
+        method: method,
         summary: summaryMatch ? summaryMatch[1] : '',
         description: descriptionMatch ? descriptionMatch[1] : '',
         responseType: responseTypeMatch ? responseTypeMatch[1] : '',
@@ -322,6 +327,7 @@ function parseDTO(dtoText) {
 
       if (fieldMatch) {
         const [, , fieldType, fieldName] = fieldMatch;
+
         let description = "";
         let example = "";
         let hidden = "";
